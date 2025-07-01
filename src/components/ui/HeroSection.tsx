@@ -3,20 +3,20 @@ import { Button } from './Button';
 
 export const HeroSection: React.FC = () => (
   <section
-    className="relative bg-cover bg-center h-screen"
-    style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}
-    aria-label="Mission statement background"
+    className="relative bg-cover bg-center h-[80vh]"
+    style={{ backgroundImage: "url('/assets/farm-hero.jpg')" }}
+    aria-label="Fresh produce background"
   >
-    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div className="absolute inset-0 bg-green-900 bg-opacity-50"></div>
     <div className="relative container mx-auto h-full flex flex-col justify-center items-start px-6 text-white">
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-        Rooted in Purpose,<br />Reaching Beyond
+        Farm Fresh to Your Doorstep
       </h1>
       <p className="mt-4 max-w-lg text-lg sm:text-xl">
-        Connecting communities, fostering growth, and inspiring action across every root.
+        Connect directly with local farmers, cut out the middleman, and enjoy the freshest produce—every time.
       </p>
-      <Button href="/join" className="mt-8">
-        Join the Movement
+      <Button href="/products" className="mt-8">
+        Shop Now
       </Button>
     </div>
   </section>

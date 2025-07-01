@@ -17,8 +17,9 @@ export const Button: React.FC<ButtonProps> = ({
   <Link
     href={href}
     className={
-      `inline-block px-6 py-3 rounded-md font-medium transition-colors ` +
-      `bg-primary hover:bg-primary-dark text-white ${className}`
+      `inline-block w-full text-center px-4 py-2 rounded-md font-medium ` +
+      `bg-green-600 hover:bg-green-700 text-white transition-colors ` +
+      className
     }
     {...props}
   >
