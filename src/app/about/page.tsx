@@ -1,228 +1,230 @@
-// app/about/page.tsx
-'use client'
+"use client"; // This directive marks the component as a Client Component
 
-import React, { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
+import React from 'react';
+import {
+  Leaf,
+  Handshake,
+  Heart,
+  Lightbulb,
+  Users,
+  Award,
+  Globe,
+  ArrowRight
+} from 'lucide-react'; // Icons for various sections
 
-// core Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
+// --- Interface for Team Member Props ---
+interface TeamMemberProps {
+  name: string;
+  role: string;
+  avatar: string;
+  bio: string;
+}
 
-// load Swiper components client-side only
-const Swiper = dynamic(
-  () => import('swiper/react').then((mod) => mod.Swiper),
-  { ssr: false }
-)
-const SwiperSlide = dynamic(
-  () => import('swiper/react').then((mod) => mod.SwiperSlide),
-  { ssr: false }
-)
-
-// correct module import for tree-shaking in v10+
-import { Pagination } from 'swiper/modules'
-
-export default function AboutPage() {
-  // Animated stats
-  const stats = [
-    { label: 'Active Producers', value: 1000, suffix: '+' },
-    { label: 'Monthly Consumers', value: 10000, suffix: '+' },
-    { label: 'Order Completion', value: 80, suffix: '%' },
-  ]
-  const [counts, setCounts] = useState<number[]>(stats.map(() => 0))
-
-  useEffect(() => {
-    stats.forEach(({ value }, i) => {
-      let start = 0
-      const duration = 1500
-      const stepTime = Math.max(1, Math.floor(duration / value))
-      const timer = setInterval(() => {
-        start += 1
-        setCounts((c) => {
-          const copy = [...c]
-          copy[i] = start
-          return copy
-        })
-        if (start >= value) clearInterval(timer)
-      }, stepTime)
-    })
-  }, [])
-
-  // Timeline data
-  const milestones = [
-    { year: 2023, text: 'Ideation & MVP planning' },
-    { year: 2024, text: 'Alpha launch with 100 producers' },
-    { year: 2025, text: '10,000+ monthly consumers reached' },
-  ]
-
-  // Testimonials data
-  const testimonials = [
-    { name: 'Maria', quote: 'I doubled my sales since joining Root & Reach PH!' },
-    { name: 'Jomar', quote: 'Easy to use and transparent pricing—love it!' },
-    { name: 'Liza', quote: 'Connecting directly with customers changed my business.' },
-  ]
-
+// --- About Us Page Component ---
+const AboutPage = () => {
   return (
-    <main className="space-y-0">
-      {/* Hero */}
-      <section
-        className="relative h-[80vh] flex items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-farm.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
-        <div className="relative z-10 px-6 max-w-2xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-            Connecting Communities, Cultivating Trust
+    <div className="min-h-screen bg-gray-50 font-inter text-gray-800">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
+        {/* Background organic shapes for visual interest */}
+        <div className="absolute top-0 left-0 w-48 h-48 bg-green-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute top-0 right-0 w-48 h-48 bg-yellow-300 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+            About Root & Reach
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-white/90">
-            Root &amp; Reach PH bridges local producers and conscious consumers in the Philippines.
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+            Our journey to connect local producers with conscious consumers, fostering a thriving community.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+            Our Mission & Vision
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="bg-green-50 p-8 rounded-xl shadow-md border border-green-100 flex flex-col items-center">
+              <Lightbulb size={60} className="text-green-600 mb-6" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                To empower local farmers and artisans by providing a direct, transparent, and fair marketplace for their goods, while connecting consumers to fresh, high-quality, sustainably sourced products.
+              </p>
+            </div>
+            <div className="bg-green-50 p-8 rounded-xl shadow-md border border-green-100 flex flex-col items-center">
+              <Globe size={60} className="text-green-600 mb-6" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                To cultivate a vibrant, resilient, and equitable local food ecosystem that benefits communities, supports sustainable practices, and nourishes both people and the planet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story Section */}
+      <section className="py-16 md:py-24 bg-gray-100">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <img
+              src="https://placehold.co/600x400/84cc16/ffffff?text=Our+Story"
+              alt="People working in a farm"
+              className="rounded-3xl shadow-xl w-full h-auto object-cover transform rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out"
+              onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/cccccc/333333?text=Image+Error'; }}
+            />
+          </div>
+          <div className="md:w-1/2 text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+              Our Journey So Far
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 mb-6">
+              Root & Reach was born from a simple idea: that good food should be accessible, and those who produce it should be fairly compensated. We saw a disconnect between bustling city markets and the hardworking local farms, and we set out to build a bridge.
+            </p>
+            <p className="text-lg md:text-xl text-gray-600">
+              Starting as a small initiative, we've grown into a thriving platform connecting hundreds of producers with thousands of consumers across Metro Manila and nearby provinces. Every order tells a story of community, sustainability, and dedication.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+            Values That Guide Us
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            Every decision at Root & Reach is driven by our core principles.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ValueCard
+              icon={<Leaf size={48} className="text-green-600" />}
+              title="Sustainability"
+              description="Promoting environmentally friendly practices from farm to table."
+            />
+            <ValueCard
+              icon={<Handshake size={48} className="text-green-600" />}
+              title="Fairness"
+              description="Ensuring equitable pricing for producers and transparency for consumers."
+            />
+            <ValueCard
+              icon={<Heart size={48} className="text-green-600" />}
+              title="Community"
+              description="Building strong relationships and supporting local economies."
+            />
+             <ValueCard
+              icon={<Award size={48} className="text-green-600" />}
+              title="Quality"
+              description="Committing to the highest standards of freshness and product integrity."
+            />
+             <ValueCard
+              icon={<Users size={48} className="text-green-600" />}
+              title="Empowerment"
+              description="Helping producers grow their businesses and consumers make informed choices."
+            />
+             <ValueCard
+              icon={<Lightbulb size={48} className="text-green-600" />}
+              title="Innovation"
+              description="Continuously seeking new ways to improve the local food system."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section className="py-16 md:py-24 bg-green-50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+            Meet the Team
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            We are a dedicated group passionate about local food, sustainable agriculture, and community building.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <TeamMember
+              name="Juan Dela Cruz"
+              role="Co-Founder & CEO"
+              avatar="https://placehold.co/150x150/9ca3af/ffffff?text=JD"
+              bio="A visionary leader with a background in sustainable agriculture and technology. Juan is passionate about creating impactful solutions for local communities."
+            />
+            <TeamMember
+              name="Maria Santos"
+              role="Co-Founder & Head of Operations"
+              avatar="https://placehold.co/150x150/9ca3af/ffffff?text=MS"
+              bio="Maria brings extensive experience in logistics and supply chain management, ensuring that products move efficiently from farm to consumer."
+            />
+            <TeamMember
+              name="Lito Garcia"
+              role="Community Engagement Lead"
+              avatar="https://placehold.co/150x150/9ca3af/ffffff?text=LG"
+              bio="Lito is our bridge to the farming communities, working closely with producers to understand their needs and integrate them into the platform."
+            />
+            <TeamMember
+              name="Anna Reyes"
+              role="Marketing & Communications"
+              avatar="https://placehold.co/150x150/9ca3af/ffffff?text=AR"
+              bio="Anna tells the story of Root & Reach, connecting with consumers and highlighting the incredible efforts of our local producers through compelling content."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-green-700 to-green-900 text-white rounded-t-3xl shadow-xl">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-md">
+            Join Our Growing Community!
+          </h2>
+          <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-12">
+            Become a part of the Root & Reach family, whether as a conscious consumer or a dedicated producer.
           </p>
           <a
-            href="/join"
-            className="mt-8 inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-md transition max-w-xs mx-auto"
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
-            Get Started
+            Get In Touch <ArrowRight className="ml-2" size={20} />
           </a>
         </div>
-        <div className="absolute bottom-8 animate-bounce">
-          <span className="block w-6 h-6 border-b-2 border-r-2 border-white rotate-45 mx-auto" />
-        </div>
       </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-green-50">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          {stats.map(({ label, suffix }, i) => (
-            <div key={label}>
-              <div className="text-4xl font-bold text-green-600">
-                {counts[i]}
-                {suffix}
-              </div>
-              <div className="mt-2 text-gray-700">{label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-
-<section className="py-20 px-6 max-w-4xl mx-auto bg-gray-50">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <div>
-      <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-        Our Mission
-      </h2>
-      <p className="text-gray-700">
-        To empower local producers with a seamless, intuitive platform for selling directly to consumers.
-      </p>
     </div>
-    <div>
-      <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-        Our Vision
-      </h2>
-      <p className="text-gray-700">
-        A vibrant Philippine marketplace built on transparency, fair value, and community.
-      </p>
-    </div>
-  </div>
-</section>
+  );
+};
 
+export default AboutPage;
 
-      {/* Core Values */}
-<section className="bg-green-100 py-20 px-6">
-  <h2 className="text-3xl font-semibold text-gray-900 text-center mb-8">
-    What We Stand For
-  </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-    {[
-      { icon: '🌱', title: 'Sustainability' },
-      { icon: '👐', title: 'Trust & Transparency' },
-      { icon: '🌍', title: 'Community Empowerment' },
-      { icon: '⚙️', title: 'Accessibility for All' },
-    ].map(({ icon, title }) => (
-      <div
-        key={title}
-        className="flex items-center p-4 border rounded-lg hover:shadow-lg transition bg-white"
-      >
-        <span className="text-2xl mr-4">{icon}</span>
-        <span className="text-gray-800 font-medium">{title}</span>
-      </div>
-    ))}
-  </div>
-</section>
+// --- Sub-Components for the AboutPage ---
 
-
-      {/* Timeline */}
-      <section className="py-16 px-6">
-        <h2 className="text-3xl font-semibold text-gray-900 text-center mb-12">
-          Our Journey
-        </h2>
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-1/2 w-1 bg-green-300 h-full -translate-x-1/2" />
-          <ul className="space-y-12">
-            {milestones.map(({ year, text }, idx) => {
-              const isLeft = idx % 2 === 0
-              return (
-                <li
-                  key={year}
-                  className={`flex items-center w-full ${
-                    isLeft ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <div className="w-1/2" />
-                  <div className="w-1/2 relative px-4">
-                    <div className="absolute -left-2 top-0 w-4 h-4 bg-green-600 rounded-full" />
-                    <div className="bg-white p-6 rounded-lg shadow">
-                      <div className="text-green-600 font-bold">{year}</div>
-                      <p className="mt-2 text-gray-700">{text}</p>
-                    </div>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-<section className="py-16 bg-gray-50">
-  <h2 className="text-3xl font-semibold text-gray-900 text-center mb-8">
-    What People Are Saying
-  </h2>
-  <Swiper
-    modules={[Pagination]}
-    pagination={{ clickable: true }}
-    spaceBetween={24}
-    slidesPerView={1}
-  >
-    {testimonials.map((t, i) => (
-      <SwiperSlide key={i}>
-        <div className="max-w-xl mx-auto text-center p-6">
-          <blockquote className="italic text-gray-700">
-            “{t.quote}”
-          </blockquote>
-          <cite className="mt-4 block font-semibold text-gray-900">
-            — {t.name}
-          </cite>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</section>
-
-
-      {/* Call to Action */}
-      <section className="py-20 px-6 bg-green-600 text-white text-center">
-        <h2 className="text-3xl font-semibold mb-4">Join Our Mission</h2>
-        <p className="mb-6">
-          Whether you’re a producer or a supporter, there’s a place for you here.
-        </p>
-        <a
-          href="/join"
-          className="inline-block bg-white hover:bg-gray-100 text-green-600 font-medium px-6 py-3 rounded-md transition"
-        >
-          Get Started
-        </a>
-      </section>
-    </main>
-  )
+// Value Card Component
+interface ValueCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }
+
+const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
+  <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out group">
+    <div className="flex justify-center mb-6 group-hover:animate-bounce-once">
+      {icon}
+    </div>
+    <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
+    <p className="text-gray-600 text-base">{description}</p>
+  </div>
+);
+
+// Team Member Card Component
+const TeamMember: React.FC<TeamMemberProps> = ({ name, role, avatar, bio }) => (
+  <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center text-center p-6 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+    <img
+      src={avatar}
+      alt={name}
+      className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-green-200 shadow-md"
+      onError={(e) => { e.currentTarget.src = 'https://placehold.co/150x150/9ca3af/ffffff?text=User'; }}
+    />
+    <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
+    <p className="text-green-700 font-semibold text-md mb-3">{role}</p>
+    <p className="text-gray-600 text-sm line-clamp-4">{bio}</p>
+  </div>
+);
