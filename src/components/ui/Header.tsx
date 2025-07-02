@@ -1,13 +1,15 @@
 "use client"; // This directive marks the component as a Client Component
 
 import React, { useState } from 'react';
-import { Menu, X, Home, Package, Info, Mail, User } from 'lucide-react'; // Importing icons from lucide-react
+import { Menu, X, Home, Package, Info, Mail, User, ShoppingCart } from 'lucide-react'; // Importing icons from lucide-react, added ShoppingCart
+import { useCart } from '@/contexts/CartContext'; // Import useCart hook
 
 // Define interface for NavLink component props
 interface NavLinkProps {
   href: string;
   icon?: React.ReactNode; // icon can be any React node (e.g., Lucide icon component)
   text: string;
+  showCount?: boolean; // Optional prop to indicate if item count should be shown
 }
 
 // Define interface for MobileNavLink component props
@@ -19,6 +21,7 @@ interface MobileNavLinkProps extends NavLinkProps {
 const Header = () => {
   // State to manage the visibility of the mobile navigation menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { getCartItemCount } = useCart(); // Use the useCart hook to get item count
 
   // Function to toggle the mobile navigation menu
   const toggleMobileMenu = () => {
@@ -54,7 +57,9 @@ const Header = () => {
           <NavLink href="/products" icon={<Package size={18} />} text="Products" />
           <NavLink href="/about" icon={<Info size={18} />} text="About Us" />
           <NavLink href="/contact" icon={<Mail size={18} />} text="Contact" />
-          {/* Example of a user or login icon */}
+          {/* Cart Link */}
+          <NavLink href="/cart" icon={<ShoppingCart size={18} />} text={`Cart (${getCartItemCount()})`} showCount={true} />
+          {/* My Account Link */}
           <a
             href="/profile"
             className="flex items-center px-4 py-2 bg-white text-green-700 rounded-full hover:bg-green-100 transition-colors duration-300 shadow-md"
@@ -84,6 +89,8 @@ const Header = () => {
             <MobileNavLink href="/products" icon={<Package size={20} />} text="Products" onClick={toggleMobileMenu} />
             <MobileNavLink href="/about" icon={<Info size={20} />} text="About Us" onClick={toggleMobileMenu} />
             <MobileNavLink href="/contact" icon={<Mail size={20} />} text="Contact" onClick={toggleMobileMenu} />
+            {/* Mobile Cart Link */}
+            <MobileNavLink href="/cart" icon={<ShoppingCart size={20} />} text={`Cart (${getCartItemCount()})`} onClick={toggleMobileMenu} />
             <MobileNavLink href="/profile" icon={<User size={20} />} text="My Account" onClick={toggleMobileMenu} />
           </div>
         </div>

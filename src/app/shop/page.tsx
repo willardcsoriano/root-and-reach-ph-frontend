@@ -1,30 +1,39 @@
-// app/shop/page.tsx
 'use client'
 
 import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { FiSearch } from 'react-icons/fi'
 import { useCart } from '@/contexts/CartContext'
-import { products as raw } from '@/data/products'          // 1️⃣ named import
+import { products as raw } from '@/data/products'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+
 import { motion } from 'framer-motion'
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
 /* ------------------------------------------------------------------ */
-interface Product {
+export interface Product {
   id: string
   name: string
+  producer: string
+  description: string
   price: number
   image: string
-  category?: string      // 2️⃣ made optional to match your seed data
+  category?: string // optional so it still matches your seed data without a category
+}
+
+// Product Card Component
+interface ProductCardProps {
+  product: Product
 }
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
 /* ------------------------------------------------------------------ */
-const products: Product[] = raw   // 3️⃣ no unsafe cast
+// Adapt raw seed data (whose static type lacks `producer` and `description`) to the local `Product` interface.
+// The double cast via `unknown` silences TS 2352 while still giving us full type‑safety everywhere else.
+const products: Product[] = raw as unknown as Product[] // safe, because the interface now matches the actual data
 
 const sortOptions = [
   { label: 'Price: Low to High', value: 'asc' },
@@ -32,10 +41,56 @@ const sortOptions = [
 ] as const
 
 /* ------------------------------------------------------------------ */
-/* Component                                                           */
+/* Components                                                          */
+/* ------------------------------------------------------------------ */
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { addItemToCart } = useCart()
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full h-48 object-cover"
+        onError={(e) => {
+          e.currentTarget.src =
+            'https://placehold.co/400x300/cccccc/333333?text=Image+Unavailable'
+        }}
+      />
+      <div className="p-6 text-left flex flex-col h-full">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+          {product.name}
+        </h3>
+        <p className="text-green-700 font-semibold text-md mb-2">
+          {product.producer}
+        </p>
+        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+          {product.description}
+        </p>
+        <div className="mt-auto flex items-center justify-between">
+          <span className="text-green-700 font-bold text-lg">
+            ₱{product.price.toFixed(2)}
+          </span>
+          <button
+            onClick={() => {
+              addItemToCart(product)
+              alert(`${product.name} added to cart!`)
+            }}
+            className="flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-semibold hover:bg-green-700 transition-colors duration-300 shadow-md"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                */
 /* ------------------------------------------------------------------ */
 export default function ShopPage() {
-  const { addItem } = useCart()
+  const { addItemToCart } = useCart()
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('All')
@@ -45,7 +100,7 @@ export default function ShopPage() {
 
   /* Unique category list ------------------------------------------------ */
   const categories = useMemo(() => {
-    const s = new Set(products.map((p) => p.category ?? 'Uncategorised'))
+    const s = new Set(products.map((p) => p.category ?? 'Uncategorized'))
     return ['All', ...Array.from(s)]
   }, [])
 
@@ -105,13 +160,13 @@ export default function ShopPage() {
                   <Listbox.Option
                     key={cat}
                     value={cat}
-                    className={({ active }: { active: boolean }) =>
+                    className={({ active }) =>
                       `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-green-100 text-green-900' : 'text-gray-900'
                       }`
                     }
                   >
-                    {({ selected }: { selected: boolean }) => (
+                    {({ selected }) => (
                       <>
                         <span className={selected ? 'font-medium' : 'font-normal'}>
                           {cat}
@@ -143,13 +198,13 @@ export default function ShopPage() {
                   <Listbox.Option
                     key={opt.value}
                     value={opt}
-                    className={({ active }: { active: boolean }) =>
+                    className={({ active }) =>
                       `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-green-100 text-green-900' : 'text-gray-900'
                       }`
                     }
                   >
-                    {({ selected }: { selected: boolean }) => (
+                    {({ selected }) => (
                       <>
                         <span className={selected ? 'font-medium' : 'font-normal'}>
                           {opt.label}
@@ -198,22 +253,12 @@ export default function ShopPage() {
                       currency: 'PHP',
                     })}
                   </p>
-                    <button
-                    onClick={() =>
-                        addItem({
-                        productId: product.id,
-                        name: product.name,
-                        price: product.price,
-                        image: product.image,
-                        // if your CartItem type has category, include it; otherwise omit
-                        ...(product.category ? { category: product.category } : {})
-                        })
-                    }
+                  <button
+                    onClick={() => addItemToCart(product)}
                     className="mt-auto inline-block bg-green-600 hover:bg-green-700 text-white font-medium text-center px-4 py-2 rounded-md transition"
-                    >
+                  >
                     Add to Cart
-                    </button>
-
+                  </button>
                 </div>
               </motion.div>
             ))
