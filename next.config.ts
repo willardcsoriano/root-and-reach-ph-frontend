@@ -2,18 +2,34 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'randomuser.me',
-      'source.unsplash.com',
-      'cdn.britannica.com',   // add this line
-      // add more hostnames here as needed
+    // The 'remotePatterns' property is the recommended way to configure external image hosts.
+    // It's more secure and flexible than the deprecated 'domains' property.
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.britannica.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
-    // or, for fine-grained control:
-    // remotePatterns: [
-    //   { protocol: 'https', hostname: 'cdn.britannica.com', port: '', pathname: '/**' },
-    //   { protocol: 'https', hostname: 'randomuser.me',     port: '', pathname: '/api/portraits/**' },
-    //   { protocol: 'https', hostname: 'source.unsplash.com', port: '', pathname: '/**' },
-    // ],
   },
   reactStrictMode: true,
   swcMinify: true,
