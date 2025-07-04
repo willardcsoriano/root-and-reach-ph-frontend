@@ -1,7 +1,7 @@
 "use client"; // This directive marks the component as a Client Component
 
 import React, { useState } from 'react';
-import { Menu, X, Home, Package, Info, Mail, User, ShoppingCart, Tractor, MapPin } from 'lucide-react';
+import { Menu, X, Home, Package, Info, Mail, User, ShoppingCart, Tractor, MapPin, MessageSquare } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 
 // Define interface for NavLink component props
@@ -49,6 +49,8 @@ const Header = () => {
           <NavLink href="/nearby-farms" icon={<MapPin size={18} />} text="Nearby Farms" />
           <NavLink href="/about" icon={<Info size={18} />} text="About Us" />
           <NavLink href="/contact" icon={<Mail size={18} />} text="Contact" />
+          <NavLink href="/orders" icon={<Package size={18} />} text="My Orders" />
+          <NavLink href="/support" icon={<MessageSquare size={18} />} text="Support" />
           {/* MODIFIED: Cart Link now uses the 'count' prop */}
           <NavLink
             href="/cart"
@@ -83,6 +85,8 @@ const Header = () => {
             <MobileNavLink href="/products" icon={<Package size={20} />} text="Products" onClick={toggleMobileMenu} />
             {/* MODIFIED: Mobile cart link text */}
             <MobileNavLink href="/cart" icon={<ShoppingCart size={20} />} text={`Cart (${cartItemCount})`} onClick={toggleMobileMenu} />
+            <MobileNavLink href="/orders" icon={<Package size={20} />} text="My Orders" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/support" icon={<MessageSquare size={20} />} text="Support" onClick={toggleMobileMenu} />
             {/* ... other mobile links */}
           </div>
         </div>

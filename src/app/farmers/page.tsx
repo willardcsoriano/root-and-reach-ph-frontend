@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { Leaf, MapPin, Search, Sprout, ChevronDown } from 'lucide-react';
 import Image from 'next/image'; // Using Next.js Image for optimization
+import Link from 'next/link'; // 👈 Import the Link component
 
 // --- TYPE DEFINITION ---
 // Defines the structure for a single farmer object.
@@ -76,26 +77,27 @@ const farmersData: Farmer[] = [
 ];
 
 
-// --- FARMER CARD COMPONENT ---
+// --- FARMER CARD COMPONENT (Corrected) ---
 const FarmerCard: React.FC<{ farmer: Farmer }> = ({ farmer }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out group">
     <div className="relative h-48 w-full">
       <Image
         src={farmer.imageUrl}
         alt={`A photo of ${farmer.name}`}
-        layout="fill"
-        objectFit="cover"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        style={{ objectFit: 'cover' }}
         className="group-hover:scale-105 transition-transform duration-300"
       />
     </div>
-    <div className="p-5">
+    <div className="p-5 flex flex-col">
       <h3 className="text-2xl font-bold font-inter text-green-800">{farmer.name}</h3>
       <div className="flex items-center text-gray-500 mt-1 mb-3">
         <MapPin size={16} className="mr-2 flex-shrink-0" />
         <span className="text-sm">{farmer.location}</span>
       </div>
-      <p className="text-gray-700 text-sm mb-4 h-20 overflow-hidden">{farmer.bio}</p>
-      <div className="mb-4">
+      <p className="text-gray-700 text-sm mb-4 flex-grow h-20">{farmer.bio}</p>
+      <div className="mb-4 mt-auto">
         <h4 className="font-semibold text-gray-800 mb-2">Specialties:</h4>
         <div className="flex flex-wrap gap-2">
           {farmer.specialties.map(specialty => (
@@ -105,12 +107,12 @@ const FarmerCard: React.FC<{ farmer: Farmer }> = ({ farmer }) => (
           ))}
         </div>
       </div>
-      <a 
-        href={`/products?farmer=${farmer.id}`} 
-        className="inline-block w-full text-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+      <Link 
+        href={`/farmers/${farmer.id}`} 
+        className="mt-4 inline-block w-full text-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
       >
-        View Products
-      </a>
+        View Profile
+      </Link>
     </div>
   </div>
 );
