@@ -1,8 +1,10 @@
 "use client"; // This directive marks the component as a Client Component
 
 import Image from 'next/image';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react'; // Icons for contact info and form
+import Link from 'next/link';
 import Link from 'next/link';
 
 // --- Contact Page Component ---
@@ -170,13 +172,17 @@ const ContactPage = () => {
               <div className="flex items-center text-gray-700 text-lg">
                 <Mail size={24} className="text-green-600 mr-4 flex-shrink-0" />
                 <Link href="mailto:info@rootandreach.com" className="hover:text-green-700 transition-colors duration-300">
+                <Link href="mailto:info@rootandreach.com" className="hover:text-green-700 transition-colors duration-300">
                   info@rootandreach.com
+                </Link>
                 </Link>
               </div>
               <div className="flex items-center text-gray-700 text-lg">
                 <Phone size={24} className="text-green-600 mr-4 flex-shrink-0" />
                 <Link href="tel:+1234567890" className="hover:text-green-700 transition-colors duration-300">
+                <Link href="tel:+1234567890" className="hover:text-green-700 transition-colors duration-300">
                   +1 (234) 567-890
+                </Link>
                 </Link>
               </div>
               <div className="flex items-start text-gray-700 text-lg">
@@ -194,6 +200,7 @@ const ContactPage = () => {
           <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
             <h2 className="text-3xl font-bold text-green-800 mb-6">Find Us on the Map</h2>
             {/* Using a placeholder image for the map. For a real map, you'd integrate Google Maps API or similar. */}
+            <Image
             <Image
               src="https://placehold.co/600x400/e0e0e0/333333?text=Map+Placeholder"
               alt="Location Map"
@@ -217,10 +224,12 @@ const ContactPage = () => {
             Whether you&apos;re a producer, consumer, or partner, we&apos;re excited to grow together.
           </p>
           <Link
+          <Link
             href="/about" // Link back to about page or relevant section
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Learn More About Us <ArrowRight className="ml-2" size={20} />
+          </Link>
           </Link>
         </div>
       </section>

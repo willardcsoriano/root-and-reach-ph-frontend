@@ -1,7 +1,9 @@
 'use client'
 
 import ProductCard from '@/components/ui/ProductCard';
+import ProductCard from '@/components/ui/ProductCard';
 import React, { useState, useMemo } from 'react'
+import Link from 'next/link';
 import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi'
 import { useCart } from '@/contexts/CartContext'
@@ -39,6 +41,7 @@ const sortOptions = [
 /* ------------------------------------------------------------------ */
 export default function ShopPage() {
 
+  const { addToCart } = useCart()
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('All')
@@ -179,6 +182,8 @@ export default function ShopPage() {
             filtered.map((product) => (
               // Just use the component you imported!
               <ProductCard key={product.id} product={product} />
+              // Just use the component you imported!
+              <ProductCard key={product.id} product={product} />
             ))
           ) : (
             <p className="col-span-full text-center text-gray-500">No products found.</p>
@@ -195,10 +200,12 @@ export default function ShopPage() {
           Reach out and we’ll help you connect with local producers directly.
         </p>
         <Link
+        <Link
           href="/contact"
           className="inline-block rounded-md bg-green-600 px-6 py-3 font-medium text-white transition hover:bg-green-700"
         >
           Contact Us
+        </Link>
         </Link>
       </section>
     </main>
