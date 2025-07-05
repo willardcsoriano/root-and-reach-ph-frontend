@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { useCart } from '@/contexts/CartContext';
 import { Product } from '@/app/shop/page'; // You might need to move this type or import it
 

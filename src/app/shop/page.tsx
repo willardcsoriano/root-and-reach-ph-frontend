@@ -39,8 +39,6 @@ const sortOptions = [
 /* ------------------------------------------------------------------ */
 export default function ShopPage() {
 
-  const { addToCart } = useCart()
-
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('All')
   const [sortOrder, setSortOrder] = useState<(typeof sortOptions)[number]>(
