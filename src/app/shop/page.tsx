@@ -1,14 +1,13 @@
 'use client'
 
+import ProductCard from '@/components/ui/ProductCard';
 import React, { useState, useMemo } from 'react'
-import Image from 'next/image'
+import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi'
 import { useCart } from '@/contexts/CartContext'
 import { products as raw } from '@/data/products'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-
-import { motion } from 'framer-motion'
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -21,11 +20,6 @@ export interface Product {
   price: number
   image: string
   category?: string // optional so it still matches your seed data without a category
-}
-
-// Product Card Component
-interface ProductCardProps {
-  product: Product
 }
 
 /* ------------------------------------------------------------------ */
@@ -41,56 +35,10 @@ const sortOptions = [
 ] as const
 
 /* ------------------------------------------------------------------ */
-/* Components                                                          */
-/* ------------------------------------------------------------------ */
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addItemToCart } = useCart()
-
-  return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-48 object-cover"
-        onError={(e) => {
-          e.currentTarget.src =
-            'https://placehold.co/400x300/cccccc/333333?text=Image+Unavailable'
-        }}
-      />
-      <div className="p-6 text-left flex flex-col h-full">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
-          {product.name}
-        </h3>
-        <p className="text-green-700 font-semibold text-md mb-2">
-          {product.producer}
-        </p>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-          {product.description}
-        </p>
-        <div className="mt-auto flex items-center justify-between">
-          <span className="text-green-700 font-bold text-lg">
-            ₱{product.price.toFixed(2)}
-          </span>
-          <button
-            onClick={() => {
-              addItemToCart(product)
-              alert(`${product.name} added to cart!`)
-            }}
-            className="flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-semibold hover:bg-green-700 transition-colors duration-300 shadow-md"
-          >
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ------------------------------------------------------------------ */
 /* Page                                                                */
 /* ------------------------------------------------------------------ */
 export default function ShopPage() {
-  const { addItemToCart } = useCart()
+
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('All')
@@ -229,38 +177,8 @@ export default function ShopPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.length ? (
             filtered.map((product) => (
-              <motion.div
-                key={product.id}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="overflow-hidden rounded-lg bg-white shadow"
-              >
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex h-full flex-col p-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 font-bold text-green-600">
-                    {product.price.toLocaleString('en-PH', {
-                      style: 'currency',
-                      currency: 'PHP',
-                    })}
-                  </p>
-                  <button
-                    onClick={() => addItemToCart(product)}
-                    className="mt-auto inline-block bg-green-600 hover:bg-green-700 text-white font-medium text-center px-4 py-2 rounded-md transition"
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </motion.div>
+              // Just use the component you imported!
+              <ProductCard key={product.id} product={product} />
             ))
           ) : (
             <p className="col-span-full text-center text-gray-500">No products found.</p>
@@ -276,12 +194,12 @@ export default function ShopPage() {
         <p className="mb-6 text-gray-700">
           Reach out and we’ll help you connect with local producers directly.
         </p>
-        <a
+        <Link
           href="/contact"
           className="inline-block rounded-md bg-green-600 px-6 py-3 font-medium text-white transition hover:bg-green-700"
         >
           Contact Us
-        </a>
+        </Link>
       </section>
     </main>
   )

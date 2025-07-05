@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/contexts/CartContext';
-import { CreditCard, Truck, User, Mail, Phone, Home, Landmark, Package } from 'lucide-react';
+import { CreditCard, Truck, User, Landmark, Package } from 'lucide-react';
 import Image from 'next/image';
 
 const CheckoutPage = () => {
-  const { cartItems, getCartItemCount, clearCart } = useCart();
+  const { cartItems, clearCart } = useCart();
   const router = useRouter();
 
   // Form state

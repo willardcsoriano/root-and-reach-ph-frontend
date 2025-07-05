@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Home, Package, Info, Mail, User, ShoppingCart, Tractor, MapPin, MessageSquare } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
+import Link from 'next/link';
 
 // Define interface for NavLink component props
 interface NavLinkProps {
@@ -36,9 +37,9 @@ const Header = () => {
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             <path d="M12 18s-4-2-4-6V7l4-2 4 2v5c0 4-4 6-4 6z" />
           </svg>
-          <a href="/" className="text-2xl font-bold font-inter tracking-wide">
+          <Link href="/" className="text-2xl font-bold font-inter tracking-wide">
             Root & Reach
-          </a>
+          </Link>
         </div>
 
         {/* Desktop/Tablet Navigation Links */}
@@ -59,14 +60,14 @@ const Header = () => {
             count={cartItemCount}
           />
           {/* My Account Link */}
-          <a
+          <Link
             href="/profile"
             className="flex items-center px-3 py-2 lg:px-4 bg-white text-green-700 rounded-full hover:bg-green-100 transition-colors duration-300 shadow-md"
             title="My Account" // This provides the hover text
           >
             <User size={18} className="mr-0 lg:mr-2" />
             <span className="font-semibold hidden lg:inline">My Account</span>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button (Hamburger) */}
@@ -97,7 +98,7 @@ const Header = () => {
 
 // --- KEY CHANGES ARE IN THIS COMPONENT ---
 const NavLink: React.FC<NavLinkProps> = ({ href, icon, text, count }) => (
-  <a
+  <Link
     href={href}
     className="flex items-center text-white hover:text-green-200 transition-colors duration-300 font-medium text-lg group"
     title={text} // EXPLANATION: This attribute creates the hover tooltip
@@ -113,20 +114,20 @@ const NavLink: React.FC<NavLinkProps> = ({ href, icon, text, count }) => (
         ({count})
       </span>
     )}
-  </a>
+  </Link>
 );
 
 
 // No changes needed for MobileNavLink, but included for completeness
 const MobileNavLink: React.FC<MobileNavLinkProps> = ({ href, icon, text, onClick }) => (
-  <a
+  <Link
     href={href}
     onClick={onClick}
     className="flex items-center text-white hover:bg-green-600 px-4 py-3 rounded-lg transition-colors duration-300 text-lg font-medium"
   >
     {icon && <span className="mr-3">{icon}</span>}
     {text}
-  </a>
+  </Link>
 );
 
 export default Header;

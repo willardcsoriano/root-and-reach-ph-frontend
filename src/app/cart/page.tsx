@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCart, CartItem } from '@/contexts/CartContext';
-import { Plus, Minus, Trash2, ShoppingCart, ArrowRight } from 'lucide-react';
+import { Plus, Minus, ShoppingCart, ArrowRight } from 'lucide-react';
 
 // --- Individual Cart Item Row Component ---
 const CartItemRow: React.FC<{ item: CartItem }> = ({ item }) => {
@@ -73,7 +73,7 @@ const CartPage = () => {
       <div className="text-center py-20 md:py-32">
         <ShoppingCart size={64} className="mx-auto text-gray-300" />
         <h1 className="mt-6 text-3xl font-bold text-gray-800">Your cart is empty</h1>
-        <p className="mt-2 text-gray-500">Looks like you haven't added anything to your cart yet.</p>
+        <p className="mt-2 text-gray-500">Looks like you haven&apos;t added anything to your cart yet.</p>
         <Link 
           href="/products" 
           className="mt-8 inline-block bg-green-600 text-white font-bold text-lg py-3 px-8 rounded-full hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"

@@ -1,5 +1,6 @@
 "use client"; // This directive marks the component as a Client Component
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 import {
   User,
@@ -21,6 +22,7 @@ import {
   ClipboardList,
   ArrowRight // <--- Added ArrowRight here
 } from 'lucide-react'; // Icons for profile sections and details
+import Link from 'next/link';
 
 // --- 1. Data Interfaces ---
 interface UserProfile {
@@ -114,7 +116,7 @@ const ProfilePage = () => {
       {/* Profile Hero/Banner Section */}
       <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-16 md:py-20 rounded-b-3xl shadow-lg">
         <div className="container mx-auto px-6 text-center relative z-10">
-          <img
+          <Image
             src={MOCK_USER.avatar}
             alt={MOCK_USER.name}
             className="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg"
@@ -259,7 +261,7 @@ const OrderHistory: React.FC<OrderHistoryProps> = ({ orders }) => (
       Your Order History
     </h2>
     {orders.length === 0 ? (
-      <p className="text-gray-600 text-lg text-center py-10">You haven't placed any orders yet.</p>
+      <p className="text-gray-600 text-lg text-center py-10">You haven&apos;t placed any orders yet.</p>
     ) : (
       <div className="space-y-6">
         {orders.map(order => (
@@ -353,13 +355,13 @@ interface DashboardActionButtonProps {
 }
 
 const DashboardActionButton: React.FC<DashboardActionButtonProps> = ({ icon, label, link }) => (
-  <a
+  <Link
     href={link}
     className="flex items-center justify-center p-4 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition-colors duration-200 text-gray-800 font-semibold"
   >
     {icon && <span className="mr-3">{icon}</span>}
     {label}
-  </a>
+  </Link>
 );
 
 // Settings Section

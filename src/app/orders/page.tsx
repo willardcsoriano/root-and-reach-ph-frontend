@@ -1,7 +1,7 @@
 // src/app/orders/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { Package, Calendar, CircleDot, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Package, CircleDot, CheckCircle2, ArrowRight } from 'lucide-react';
 
 // --- MOCK DATA ---
 // In a real application, this would be fetched from your database for the logged-in user.

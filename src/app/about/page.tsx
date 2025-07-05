@@ -9,8 +9,10 @@ import {
   Users,
   Award,
   Globe,
-  ArrowRight
+  ArrowRight,
+  Link
 } from 'lucide-react'; // Icons for various sections
+import Image from 'next/image';
 
 // --- Interface for Team Member Props ---
 interface TeamMemberProps {
@@ -69,7 +71,8 @@ const AboutPage = () => {
       <section className="py-16 md:py-24 bg-gray-100">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <img
+            <Image
+
               src="https://placehold.co/600x400/84cc16/ffffff?text=Our+Story"
               alt="People working in a farm"
               className="rounded-3xl shadow-xl w-full h-auto object-cover transform rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out"
@@ -84,7 +87,7 @@ const AboutPage = () => {
               Root & Reach was born from a simple idea: that good food should be accessible, and those who produce it should be fairly compensated. We saw a disconnect between bustling city markets and the hardworking local farms, and we set out to build a bridge.
             </p>
             <p className="text-lg md:text-xl text-gray-600">
-              Starting as a small initiative, we've grown into a thriving platform connecting hundreds of producers with thousands of consumers across Metro Manila and nearby provinces. Every order tells a story of community, sustainability, and dedication.
+              Starting as a small initiative, we&apos;ve grown into a thriving platform connecting hundreds of producers with thousands of consumers across Metro Manila and nearby provinces. Every order tells a story of community, sustainability, and dedication.
             </p>
           </div>
         </div>
@@ -181,12 +184,12 @@ const AboutPage = () => {
           <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-12">
             Become a part of the Root & Reach family, whether as a conscious consumer or a dedicated producer.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Get In Touch <ArrowRight className="ml-2" size={20} />
-          </a>
+          </Link>
         </div>
       </section>
     </div>
@@ -217,7 +220,8 @@ const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
 // Team Member Card Component
 const TeamMember: React.FC<TeamMemberProps> = ({ name, role, avatar, bio }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center text-center p-6 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-    <img
+    <Image
+
       src={avatar}
       alt={name}
       className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-green-200 shadow-md"

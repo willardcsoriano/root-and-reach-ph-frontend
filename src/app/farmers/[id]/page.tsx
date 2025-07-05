@@ -61,7 +61,7 @@ const ProductCard: React.FC<{ product: Product, farmerName: string }> = ({ produ
     const [isAdded, setIsAdded] = React.useState(false);
     const { addToCart } = useCart();
     const handleAddToCart = () => {
-        addToCart({ id: product.id, name: product.name, price: product.price, quantity: quantity, imageUrl: product.imageUrl, farmer: farmerName });
+        addToCart({ id: String(product.id), name: product.name, price: product.price, quantity: quantity, imageUrl: product.imageUrl, farmer: farmerName });
         setIsAdded(true);
         setTimeout(() => { setIsAdded(false); setQuantity(1); }, 2000);
     };
