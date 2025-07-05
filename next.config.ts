@@ -1,9 +1,7 @@
-// next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   images: {
-    // The 'remotePatterns' property is the recommended way to configure external image hosts.
-    // It's more secure and flexible than the deprecated 'domains' property.
     remotePatterns: [
       {
         protocol: 'https',
@@ -32,6 +30,10 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  webpack: (config) => {
+    config.externals.push("bcrypt");
+    return config;
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
