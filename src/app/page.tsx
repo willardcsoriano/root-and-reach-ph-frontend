@@ -20,7 +20,6 @@ import {
   DollarSign
 } from 'lucide-react';
 import Link from 'next/link';
-import Link from 'next/link';
 
 // --- Prop Interfaces for Sub-Components ---
 
@@ -111,20 +110,16 @@ const HeroSection = () => (
         </p>
         <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
-          <Link
             href="/products"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Explore Products <ArrowRight className="ml-2" size={20} />
           </Link>
           <Link
-          </Link>
-          <Link
             href="/about"
             className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-full shadow-lg hover:bg-white hover:text-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Learn More
-          </Link>
           </Link>
         </div>
       </div>
@@ -265,12 +260,10 @@ const FeaturedProductsSection = () => (
       </div>
       <div className="mt-12">
         <Link
-        <Link
           href="/products"
           className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
         >
           View All Products <ArrowRight className="ml-2" size={20} />
-        </Link>
         </Link>
       </div>
     </div>
@@ -280,7 +273,6 @@ const FeaturedProductsSection = () => (
 // Helper for FeaturedProductsSection
 const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price, link }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-    <Image
     <Image
       src={image}
       alt={title}
@@ -293,12 +285,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, pr
       <div className="flex items-center justify-between mt-4">
         <span className="text-green-700 font-bold text-lg">{price}</span>
         <Link
-        <Link
           href={link}
           className="text-green-600 hover:text-green-800 font-semibold flex items-center"
         >
           Details <ArrowRight size={16} className="ml-1" />
-        </Link>
         </Link>
       </div>
     </div>
@@ -392,7 +382,6 @@ const TestimonialsSection = () => (
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, role, avatar }) => (
   <div className="bg-white p-8 rounded-xl shadow-lg text-gray-800 text-left flex flex-col items-center md:items-start transform hover:scale-105 transition-transform duration-300 ease-in-out">
     <Image
-    <Image
       src={avatar}
       alt={name}
       className="w-20 h-20 rounded-full object-cover mb-6 border-4 border-green-200 shadow-md"
@@ -426,12 +415,10 @@ const CallToActionSection = () => (
             Expand your reach, get fair prices, and simplify your sales process.
           </p>
           <Link
-          <Link
             href="/producers/signup"
             className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-bold rounded-full shadow-md hover:bg-green-700 transition-colors duration-300"
           >
             Register as a Producer <ArrowRight className="ml-2" size={18} />
-          </Link>
           </Link>
         </div>
         <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
@@ -440,7 +427,6 @@ const CallToActionSection = () => (
           <p className="text-gray-600 mb-6">
             Access fresh, high-quality local products directly from the source.
           </p>
-          <Link
           <Link
             href="/consumer/signup"
             className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-bold rounded-full shadow-md hover:bg-green-700 transition-colors duration-300"
