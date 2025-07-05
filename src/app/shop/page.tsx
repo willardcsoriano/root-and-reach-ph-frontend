@@ -4,7 +4,6 @@ import ProductCard from '@/components/ui/ProductCard';
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi'
-import { useCart } from '@/contexts/CartContext'
 import { products as raw } from '@/data/products'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
