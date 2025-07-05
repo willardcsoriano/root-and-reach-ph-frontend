@@ -1,8 +1,9 @@
-export const runtime = 'edge';
-
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
+
+// This is the critical fix to ensure the 'crypto' module is available
+export const runtime = "nodejs";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -22,7 +23,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET!,
-  session: { strategy: "jwt" },
+  // The "as const" provides better type safety in TypeScript
+  session: { strategy: "jwt" as const },
   pages: { signIn: "/auth/sign-in" },
 };
 
