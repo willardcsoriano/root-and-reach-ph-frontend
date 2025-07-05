@@ -1,7 +1,9 @@
 "use client"; // This directive marks the component as a Client Component
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { Search, ChevronDown, Filter, ListFilter, MapPin, User, Sprout, Tractor } from 'lucide-react'; // Added new icons
+import Link from 'next/link';
+import Image from 'next/image';
+import React, { useState, useMemo } from 'react';
+import { Search, ChevronDown, Filter, ListFilter, MapPin, User, Tractor } from 'lucide-react'; // Added new icons
 
 // --- 1. Product Data Interface ---
 interface Product {
@@ -339,12 +341,12 @@ const ProductsPage = () => {
             ))}
           </div>
           <div className="mt-12">
-            <a
+            <Link
               href="/farms" // Link to a dedicated farms page if you create one later
               className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
               View All Farms <Tractor className="ml-2" size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -364,12 +366,12 @@ const ProductsPage = () => {
             ))}
           </div>
           <div className="mt-12">
-            <a
+            <Link
               href="/farmers" // Link to a dedicated farmers page if you create one later
               className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
               Meet All Farmers <User className="ml-2" size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -389,7 +391,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-    <img
+    <Image
       src={product.image}
       alt={product.name}
       className="w-full h-48 object-cover"
@@ -441,7 +443,7 @@ interface FarmCardProps {
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-    <img
+    <Image
       src={farm.image}
       alt={farm.name}
       className="w-full h-48 object-cover"
@@ -474,7 +476,7 @@ interface FarmerCardProps {
 
 const FarmerCard: React.FC<FarmerCardProps> = ({ farmer }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center text-center p-6 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-    <img
+    <Image
       src={farmer.avatar}
       alt={farmer.name}
       className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-green-200 shadow-md"

@@ -33,12 +33,12 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-1 text-center md:text-left">
           <h3 className="text-xl font-semibold text-white mb-5">Quick Links</h3>
           <ul className="space-y-3">
-            <li><a href="/" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Home</a></li>
-            <li><a href="/products" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Our Products</a></li>
-            <li><a href="/how-it-works" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">How It Works</a></li>
-            <li><a href="/faq" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">FAQs</a></li>
-            <li><a href="/terms" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Terms of Service</a></li>
-            <li><a href="/privacy" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Privacy Policy</a></li>
+            <li><Link href="/" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Home</Link></li>
+            <li><Link href="/products" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Our Products</Link></li>
+            <li><Link href="/how-it-works" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">How It Works</Link></li>
+            <li><Link href="/faq" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">FAQs</Link></li>
+            <li><Link href="/terms" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Terms of Service</Link></li>
+            <li><Link href="/privacy" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">Privacy Policy</Link></li>
           </ul>
         </div>
 
@@ -48,11 +48,11 @@ const Footer = () => {
           <ul className="space-y-3">
             <li className="flex items-center justify-center md:justify-start">
               <Mail size={20} className="text-green-500 mr-3 flex-shrink-0" />
-              <a href="mailto:info@rootandreach.com" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">info@rootandreach.com</a>
+              <Link href="mailto:info@rootandreach.com" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">info@rootandreach.com</Link>
             </li>
             <li className="flex items-center justify-center md:justify-start">
               <Phone size={20} className="text-green-500 mr-3 flex-shrink-0" />
-              <a href="tel:+1234567890" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">+1 (234) 567-890</a>
+              <Link href="tel:+1234567890" className="text-gray-400 hover:text-green-400 transition-colors duration-300 text-base">+1 (234) 567-890</Link>
             </li>
             <li className="flex items-start justify-center md:justify-start">
               <MapPin size={20} className="text-green-500 mr-3 flex-shrink-0 mt-1" />
@@ -69,18 +69,18 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-1 text-center md:text-left">
           <h3 className="text-xl font-semibold text-white mb-5">Connect With Us</h3>
           <div className="flex justify-center md:justify-start space-x-4 mb-6">
-            <a href="https://facebook.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
+            <Link href="https://facebook.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
               <Facebook size={28} />
-            </a>
-            <a href="https://instagram.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
+            </Link>
+            <Link href="https://instagram.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
               <Instagram size={28} />
-            </a>
-            <a href="https://twitter.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
+            </Link>
+            <Link href="https://twitter.com/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
               <Twitter size={28} />
-            </a>
-            <a href="https://linkedin.com/company/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
+            </Link>
+            <Link href="https://linkedin.com/company/rootandreach" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors duration-300">
               <Linkedin size={28} />
-            </a>
+            </Link>
           </div>
           <h4 className="text-lg font-medium text-white mb-3">Stay Updated!</h4>
           <form className="flex flex-col sm:flex-row gap-2">

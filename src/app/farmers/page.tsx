@@ -49,7 +49,7 @@ const farmersData: Farmer[] = [
   },
   {
     id: 4,
-    name: 'Benny\'s Poultry',
+    name: 'Benny\&apos;s Poultry',
     location: 'Rizal, Philippines',
     bio: 'We provide the community with fresh, free-range eggs and poultry. Our chickens are raised ethically, with plenty of space to roam.',
     specialties: ['Eggs', 'Chicken'],
@@ -203,12 +203,12 @@ const FarmersPage = () => {
             <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
                 Join our mission to bring fresh, local produce to tables across the nation. We'd love to help you grow your reach.
             </p>
-            <a 
+            <Link 
                 href="/partner-application" 
                 className="mt-8 inline-block bg-green-600 text-white font-bold text-lg py-3 px-8 rounded-full hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
                 Become a Partner
-            </a>
+            </Link>
         </div>
       </section>
     </div>

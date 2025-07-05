@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Send, MessageSquare } from 'lucide-react';
-import Link from 'next/link';
 
 // --- TYPE DEFINITIONS ---
 type Message = {

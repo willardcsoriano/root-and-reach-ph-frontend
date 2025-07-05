@@ -9,7 +9,8 @@ import {
   Users,
   Award,
   Globe,
-  ArrowRight
+  ArrowRight,
+  Link
 } from 'lucide-react'; // Icons for various sections
 
 // --- Interface for Team Member Props ---
@@ -181,12 +182,12 @@ const AboutPage = () => {
           <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-12">
             Become a part of the Root & Reach family, whether as a conscious consumer or a dedicated producer.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Get In Touch <ArrowRight className="ml-2" size={20} />
-          </a>
+          </Link>
         </div>
       </section>
     </div>
