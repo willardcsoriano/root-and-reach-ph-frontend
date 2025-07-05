@@ -1,11 +1,12 @@
+// src/app/api/auth/[...nextauth]/route.ts
+export const runtime = "nodejs";
+
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 
-// This is the critical fix to ensure the 'crypto' module is available
-export const runtime = "nodejs";
-
-export const authOptions: NextAuthOptions = {
+// ← Make this local (remove the `export`)
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Email",
@@ -14,7 +15,6 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // TODO: Replace with real user lookup/verification
         if (credentials?.email && credentials.password) {
           return { id: "1", name: "Demo User", email: credentials.email };
         }
@@ -23,11 +23,11 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET!,
-  // The "as const" provides better type safety in TypeScript
   session: { strategy: "jwt" as const },
   pages: { signIn: "/auth/sign-in" },
 };
 
 const handler = NextAuth(authOptions);
 
+// ← Only export the HTTP methods
 export { handler as GET, handler as POST };
