@@ -1,3 +1,4 @@
+// C:\Users\Willard\root-and-reach-ph-frontend\src\app\track-order\[id]\page.tsx
 // src/app/track-order/[id]/page.tsx
 "use client";
 
@@ -5,6 +6,13 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { ArrowLeft, MessageSquare, Phone } from 'lucide-react';
 import Link from 'next/link';
+
+// --- Define an interface for the page props for better type safety ---
+interface TrackOrderPageProps {
+  params: {
+    id: string;
+  };
+}
 
 // --- Dynamically import the map component with SSR disabled ---
 const Map = dynamic(() => import('@/components/TrackOrderMap'), { 
@@ -16,7 +24,8 @@ const STATUSES = ["Ordered", "Packed", "On the Way", "Delivered"];
 const FARM_LOCATION: [number, number] = [14.6527, 121.0501]; // Example: Farm in Quezon City
 const HOME_LOCATION: [number, number] = [14.6091, 121.0223]; // Example: Home in Manila
 
-const TrackOrderPage = ({ params }: { params: { id: string } }) => {
+// --- Use the new interface for the component's props ---
+const TrackOrderPage = ({ params }: TrackOrderPageProps) => {
     const [orderStatus, setOrderStatus] = useState(0); // Index of STATUSES array
     const [eta, setEta] = useState(40); // Initial ETA in minutes
     const [vehiclePosition, setVehiclePosition] = useState<[number, number]>(FARM_LOCATION);
@@ -94,14 +103,14 @@ const TrackOrderPage = ({ params }: { params: { id: string } }) => {
                         <div className="border-t pt-6 mt-6">
                              <h3 className="font-bold mb-4">Need Help?</h3>
                              <div className="space-y-3">
-                                <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
-                                    <MessageSquare size={20} />
-                                    Message Driver
-                                </button>
-                                 <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition">
-                                    <Phone size={20} />
-                                    Call Support
-                                </button>
+                                 <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
+                                     <MessageSquare size={20} />
+                                     Message Driver
+                                 </button>
+                                  <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition">
+                                     <Phone size={20} />
+                                     Call Support
+                                 </button>
                              </div>
                         </div>
                     </div>
