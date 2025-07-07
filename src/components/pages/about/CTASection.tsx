@@ -1,6 +1,6 @@
 // src/components/sections/about/CTASection.tsx
-import React from 'react'
-import { Button } from '@/components/ui/Button'
+import React from "react";
+import { Button } from "@/components/ui/Button";
 
 const CTASection: React.FC = () => (
   <section className="py-20 px-6 bg-green-600 text-white text-center">
@@ -13,6 +13,6 @@ const CTASection: React.FC = () => (
       Get Started
     </Button>
   </section>
-)
+);
 
-export default CTASection
+export default CTASection;
