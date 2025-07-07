@@ -1,7 +1,7 @@
 "use client"; // This directive marks the component as a Client Component
 
-import Image from 'next/image';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 import {
   ArrowRight,
   Leaf,
@@ -17,9 +17,9 @@ import {
   MessageCircle,
   MapPin,
   Clock,
-  DollarSign
-} from 'lucide-react';
-import Link from 'next/link';
+  DollarSign,
+} from "lucide-react";
+import Link from "next/link";
 
 // --- Prop Interfaces for Sub-Components ---
 
@@ -103,10 +103,12 @@ const HeroSection = () => (
     <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
       <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-          Rooted in Purpose, <br className="hidden md:inline"/>Reaching Beyond.
+          Rooted in Purpose, <br className="hidden md:inline" />
+          Reaching Beyond.
         </h1>
         <p className="text-xl md:text-2xl mb-8 opacity-90">
-          Connecting you directly to the heart of local produce. Fresh, fair, and empowering.
+          Connecting you directly to the heart of local produce. Fresh, fair,
+          and empowering.
         </p>
         <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
@@ -127,9 +129,9 @@ const HeroSection = () => (
         {/* Placeholder image for hero section */}
         <Image
           src="https://placehold.co/600x400/84cc16/ffffff?text=Fresh+Produce"
-          alt="Fresh local produce"
-          className="rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out max-w-full h-auto"
-          onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/84cc16/ffffff?text=Image+Error'; }}
+          alt="Fresh produce"
+          width={600}
+          height={400}
         />
       </div>
     </div>
@@ -144,7 +146,10 @@ const AboutSection = () => (
         Our Mission: Connecting Communities
       </h2>
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-        At Root & Reach, we believe in the power of direct connections. We bridge the gap between dedicated local producers and conscious consumers, fostering a sustainable ecosystem where quality, fairness, and community thrive.
+        At Root & Reach, we believe in the power of direct connections. We
+        bridge the gap between dedicated local producers and conscious
+        consumers, fostering a sustainable ecosystem where quality, fairness,
+        and community thrive.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <AboutCard
@@ -210,7 +215,12 @@ const HowItWorksSection = () => (
 );
 
 // Helper for HowItWorksSection
-const WorkStep: React.FC<WorkStepProps> = ({ step, icon, title, description }) => (
+const WorkStep: React.FC<WorkStepProps> = ({
+  step,
+  icon,
+  title,
+  description,
+}) => (
   <div className="flex flex-col items-center text-center">
     <div className="relative mb-6">
       <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110">
@@ -233,7 +243,8 @@ const FeaturedProductsSection = () => (
         Our Bestsellers
       </h2>
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-        Discover the freshest and most popular items directly from our local producers.
+        Discover the freshest and most popular items directly from our local
+        producers.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProductCard
@@ -271,13 +282,24 @@ const FeaturedProductsSection = () => (
 );
 
 // Helper for FeaturedProductsSection
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price, link }) => (
+const ProductCard: React.FC<ProductCardProps> = ({
+  image,
+  title,
+  description,
+  price,
+  link,
+}) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
     <Image
       src={image}
       alt={title}
+      width={400}
+      height={300}
       className="w-full h-48 object-cover"
-      onError={(e) => { e.currentTarget.src = 'https://placehold.co/400x300/cccccc/333333?text=Image+Unavailable'; }}
+      onError={(e) => {
+        e.currentTarget.src =
+          "https://placehold.co/400x300/cccccc/333333?text=Image+Unavailable";
+      }}
     />
     <div className="p-6 text-left">
       <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
@@ -303,7 +325,8 @@ const WhyChooseUsSection = () => (
         Why Choose Root & Reach?
       </h2>
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-        We&apos;re more than just a marketplace; we&apos;re a movement towards a better, more connected food system.
+        We&apos;re more than just a marketplace; we&apos;re a movement towards a
+        better, more connected food system.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <FeatureCard
@@ -342,7 +365,11 @@ const WhyChooseUsSection = () => (
 );
 
 // Helper for WhyChooseUsSection
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  icon,
+  title,
+  description,
+}) => (
   <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
     <div className="mb-4">{icon}</div>
     <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
@@ -358,7 +385,8 @@ const TestimonialsSection = () => (
         What Our Community Says
       </h2>
       <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-12">
-        Hear from happy consumers and thriving producers who are part of the Root & Reach family.
+        Hear from happy consumers and thriving producers who are part of the
+        Root & Reach family.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <TestimonialCard
@@ -379,16 +407,30 @@ const TestimonialsSection = () => (
 );
 
 // Helper for TestimonialsSection
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, role, avatar }) => (
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  quote,
+  name,
+  role,
+  avatar,
+}) => (
   <div className="bg-white p-8 rounded-xl shadow-lg text-gray-800 text-left flex flex-col items-center md:items-start transform hover:scale-105 transition-transform duration-300 ease-in-out">
     <Image
       src={avatar}
       alt={name}
+      width={100}
+      height={100}
       className="w-20 h-20 rounded-full object-cover mb-6 border-4 border-green-200 shadow-md"
-      onError={(e) => { e.currentTarget.src = 'https://placehold.co/100x100/9ca3af/ffffff?text=User'; }}
+      onError={(e) => {
+        e.currentTarget.src =
+          "https://placehold.co/100x100/9ca3af/ffffff?text=User";
+      }}
     />
-    <p className="text-lg italic mb-6 text-center md:text-left">&quot;{quote}&quot;</p>
-    <p className="text-lg italic mb-6 text-center md:text-left">&quot;{quote}&quot;</p>
+    <p className="text-lg italic mb-6 text-center md:text-left">
+      &quot;{quote}&quot;
+    </p>
+    <p className="text-lg italic mb-6 text-center md:text-left">
+      &quot;{quote}&quot;
+    </p>
     <div className="font-semibold text-center md:text-left">
       <p className="text-green-700 text-xl">{name}</p>
       <p className="text-gray-500 text-sm">{role}</p>
@@ -404,13 +446,17 @@ const CallToActionSection = () => (
         Join the Root & Reach Movement!
       </h2>
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-        Whether you&apos;re a consumer seeking fresh, local goods or a producer looking to connect directly with your market, Root & Reach is for you.
-        Whether you&apos;re a consumer seeking fresh, local goods or a producer looking to connect directly with your market, Root & Reach is for you.
+        Whether you&apos;re a consumer seeking fresh, local goods or a producer
+        looking to connect directly with your market, Root & Reach is for you.
+        Whether you&apos;re a consumer seeking fresh, local goods or a producer
+        looking to connect directly with your market, Root & Reach is for you.
       </p>
       <div className="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
         <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
           <Factory size={60} className="text-green-600 mx-auto mb-6" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">For Producers</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            For Producers
+          </h3>
           <p className="text-gray-600 mb-6">
             Expand your reach, get fair prices, and simplify your sales process.
           </p>
@@ -423,7 +469,9 @@ const CallToActionSection = () => (
         </div>
         <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
           <ShoppingCart size={60} className="text-green-600 mx-auto mb-6" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">For Consumers</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            For Consumers
+          </h3>
           <p className="text-gray-600 mb-6">
             Access fresh, high-quality local products directly from the source.
           </p>
@@ -446,20 +494,24 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "How does Root & Reach ensure product freshness?",
-      answer: "We connect you directly with local producers, meaning products travel shorter distances and are often harvested or prepared shortly before delivery or pickup. This minimizes transit time and maximizes freshness."
+      answer:
+        "We connect you directly with local producers, meaning products travel shorter distances and are often harvested or prepared shortly before delivery or pickup. This minimizes transit time and maximizes freshness.",
     },
     {
       question: "What kind of products can I find on Root & Reach?",
-      answer: "You'll find a wide variety of fresh produce (fruits, vegetables), artisanal goods (breads, pastries, cheeses), local meats, dairy, and more. Our selection grows as more local producers join our platform!"
+      answer:
+        "You'll find a wide variety of fresh produce (fruits, vegetables), artisanal goods (breads, pastries, cheeses), local meats, dairy, and more. Our selection grows as more local producers join our platform!",
     },
     {
       question: "How do producers get paid?",
-      answer: "Producers set their own prices and receive a fair share of each sale. Our platform is designed to minimize fees, ensuring more of your money goes directly to the hardworking individuals who produce your food."
+      answer:
+        "Producers set their own prices and receive a fair share of each sale. Our platform is designed to minimize fees, ensuring more of your money goes directly to the hardworking individuals who produce your food.",
     },
     {
       question: "Is delivery available, or do I have to pick up?",
-      answer: "Both options are available! Each producer specifies their delivery and/or pickup options. You can choose what works best for you during the ordering process."
-    }
+      answer:
+        "Both options are available! Each producer specifies their delivery and/or pickup options. You can choose what works best for you during the ordering process.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -477,7 +529,10 @@ const FAQSection = () => {
         </p>
         <div className="max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
-            <div key={index} className="mb-4 bg-gray-50 rounded-xl shadow-md border border-gray-100 overflow-hidden">
+            <div
+              key={index}
+              className="mb-4 bg-gray-50 rounded-xl shadow-md border border-gray-100 overflow-hidden"
+            >
               <button
                 className="w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-900 hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => toggleFAQ(index)}
@@ -485,10 +540,17 @@ const FAQSection = () => {
                 aria-controls={`faq-answer-${index}`}
               >
                 {faq.question}
-                {openIndex === index ? <ChevronUp size={24} className="text-green-600" /> : <ChevronDown size={24} className="text-gray-500" />}
+                {openIndex === index ? (
+                  <ChevronUp size={24} className="text-green-600" />
+                ) : (
+                  <ChevronDown size={24} className="text-gray-500" />
+                )}
               </button>
               {openIndex === index && (
-                <div id={`faq-answer-${index}`} className="px-6 pb-6 pt-2 text-gray-700 text-base leading-relaxed animate-fade-in">
+                <div
+                  id={`faq-answer-${index}`}
+                  className="px-6 pb-6 pt-2 text-gray-700 text-base leading-relaxed animate-fade-in"
+                >
                   {faq.answer}
                 </div>
               )}

@@ -1,39 +1,18 @@
-import type { NextConfig } from 'next';
+// next.config.ts
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'randomuser.me',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.britannica.com',
-        port: '',
-        pathname: '/**',
-      },
+    domains: [
+      "placehold.co",
+      "images.pexels.com",
+      "randomuser.me",
+      "source.unsplash.com",
+      "cdn.britannica.com",
     ],
   },
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.externals.push("bcrypt");
-    return config;
-  },
+  // Remove the entire webpack override block—it’s no longer needed
 };
 
 export default nextConfig;
