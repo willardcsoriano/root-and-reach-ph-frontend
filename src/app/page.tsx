@@ -126,13 +126,15 @@ const HeroSection = () => (
         </div>
       </div>
       <div className="md:w-1/2 flex justify-center">
-        {/* Placeholder image for hero section */}
-        <Image
-          src="https://placehold.co/600x400/84cc16/ffffff?text=Fresh+Produce"
-          alt="Fresh produce"
-          width={600}
-          height={400}
-        />
+        <div className="rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out overflow-hidden">
+          <Image
+            src="https://placehold.co/600x400/84cc16/ffffff?text=Fresh+Produce"
+            alt="Fresh produce"
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover"
+          />
+        </div>
       </div>
     </div>
   </section>
