@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
+/* 1. Inject Tailwind’s layers in the correct order */
+@tailwind base;
+@tailwind components;
+
+/* 2. Your custom root variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", 
+               "Courier New", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +22,85 @@
   }
 }
 
+/* 3. Global element styles */
+html {
+  /* Prevent unexpected mobile text resizing */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /* Font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  /* Disallow text selection if desired */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 4. Custom utilities (example) */
+.my-blur {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Only include mask-image when you have a valid URL */
+/*
+.my-mask {
+  -webkit-mask-image: url('/path/to/your-mask.png');
+  mask-image: url('/path/to/your-mask.png');
+}
+*/
+
+/* Finally inject Tailwind’s utility layer */
+@tailwind utilities;
+
+
+/* 1. Tailwind directives in the correct order */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Your custom root variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", 
+               "Courier New", monospace;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 3. Global element styles */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  /* Remove user-select: none unless you specifically need it */
+}
+
+/* 4. Custom utilities */
+.my-blur {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }

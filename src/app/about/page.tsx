@@ -1,6 +1,7 @@
+// C:\Users\Willard\root-and-reach-ph-frontend\src\app\about\page.tsx
 "use client"; // This directive marks the component as a Client Component
 
-import React from 'react';
+import React from "react";
 import {
   Leaf,
   Handshake,
@@ -10,9 +11,9 @@ import {
   Award,
   Globe,
   ArrowRight,
-  Link
-} from 'lucide-react'; // Icons for various sections
-import Image from 'next/image';
+  Link,
+} from "lucide-react"; // Icons for various sections
+import Image from "next/image";
 
 // --- Interface for Team Member Props ---
 interface TeamMemberProps {
@@ -37,7 +38,8 @@ const AboutPage = () => {
             About Root & Reach
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Our journey to connect local producers with conscious consumers, fostering a thriving community.
+            Our journey to connect local producers with conscious consumers,
+            fostering a thriving community.
           </p>
         </div>
       </section>
@@ -51,16 +53,25 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div className="bg-green-50 p-8 rounded-xl shadow-md border border-green-100 flex flex-col items-center">
               <Lightbulb size={60} className="text-green-600 mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Mission
+              </h3>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To empower local farmers and artisans by providing a direct, transparent, and fair marketplace for their goods, while connecting consumers to fresh, high-quality, sustainably sourced products.
+                To empower local farmers and artisans by providing a direct,
+                transparent, and fair marketplace for their goods, while
+                connecting consumers to fresh, high-quality, sustainably sourced
+                products.
               </p>
             </div>
             <div className="bg-green-50 p-8 rounded-xl shadow-md border border-green-100 flex flex-col items-center">
               <Globe size={60} className="text-green-600 mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Vision
+              </h3>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To cultivate a vibrant, resilient, and equitable local food ecosystem that benefits communities, supports sustainable practices, and nourishes both people and the planet.
+                To cultivate a vibrant, resilient, and equitable local food
+                ecosystem that benefits communities, supports sustainable
+                practices, and nourishes both people and the planet.
               </p>
             </div>
           </div>
@@ -72,11 +83,15 @@ const AboutPage = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <Image
-
               src="https://placehold.co/600x400/84cc16/ffffff?text=Our+Story"
               alt="People working in a farm"
+              width={600}
+              height={400}
               className="rounded-3xl shadow-xl w-full h-auto object-cover transform rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out"
-              onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/cccccc/333333?text=Image+Error'; }}
+              onError={(e) => {
+                e.currentTarget.src =
+                  "https://placehold.co/600x400/cccccc/333333?text=Image+Error";
+              }}
             />
           </div>
           <div className="md:w-1/2 text-center md:text-left">
@@ -84,10 +99,16 @@ const AboutPage = () => {
               Our Journey So Far
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-6">
-              Root & Reach was born from a simple idea: that good food should be accessible, and those who produce it should be fairly compensated. We saw a disconnect between bustling city markets and the hardworking local farms, and we set out to build a bridge.
+              Root & Reach was born from a simple idea: that good food should be
+              accessible, and those who produce it should be fairly compensated.
+              We saw a disconnect between bustling city markets and the
+              hardworking local farms, and we set out to build a bridge.
             </p>
             <p className="text-lg md:text-xl text-gray-600">
-              Starting as a small initiative, we&apos;ve grown into a thriving platform connecting hundreds of producers with thousands of consumers across Metro Manila and nearby provinces. Every order tells a story of community, sustainability, and dedication.
+              Starting as a small initiative, we&apos;ve grown into a thriving
+              platform connecting hundreds of producers with thousands of
+              consumers across Metro Manila and nearby provinces. Every order
+              tells a story of community, sustainability, and dedication.
             </p>
           </div>
         </div>
@@ -118,17 +139,17 @@ const AboutPage = () => {
               title="Community"
               description="Building strong relationships and supporting local economies."
             />
-             <ValueCard
+            <ValueCard
               icon={<Award size={48} className="text-green-600" />}
               title="Quality"
               description="Committing to the highest standards of freshness and product integrity."
             />
-             <ValueCard
+            <ValueCard
               icon={<Users size={48} className="text-green-600" />}
               title="Empowerment"
               description="Helping producers grow their businesses and consumers make informed choices."
             />
-             <ValueCard
+            <ValueCard
               icon={<Lightbulb size={48} className="text-green-600" />}
               title="Innovation"
               description="Continuously seeking new ways to improve the local food system."
@@ -144,7 +165,8 @@ const AboutPage = () => {
             Meet the Team
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            We are a dedicated group passionate about local food, sustainable agriculture, and community building.
+            We are a dedicated group passionate about local food, sustainable
+            agriculture, and community building.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <TeamMember
@@ -182,7 +204,8 @@ const AboutPage = () => {
             Join Our Growing Community!
           </h2>
           <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-12">
-            Become a part of the Root & Reach family, whether as a conscious consumer or a dedicated producer.
+            Become a part of the Root & Reach family, whether as a conscious
+            consumer or a dedicated producer.
           </p>
           <Link
             href="/contact"
@@ -221,11 +244,15 @@ const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
 const TeamMember: React.FC<TeamMemberProps> = ({ name, role, avatar, bio }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col items-center text-center p-6 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
     <Image
-
       src={avatar}
       alt={name}
+      width={112} // Add this (28 * 4 = 112px since w-28 = 7rem = 112px)
+      height={112} // Add this
       className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-green-200 shadow-md"
-      onError={(e) => { e.currentTarget.src = 'https://placehold.co/150x150/9ca3af/ffffff?text=User'; }}
+      onError={(e) => {
+        e.currentTarget.src =
+          "https://placehold.co/150x150/9ca3af/ffffff?text=User";
+      }}
     />
     <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
     <p className="text-green-700 font-semibold text-md mb-3">{role}</p>

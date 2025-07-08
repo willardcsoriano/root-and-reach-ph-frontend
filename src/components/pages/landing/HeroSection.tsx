@@ -1,4 +1,4 @@
-// C:\Users\Willard\root-and-reach-ph-frontend\src\components\sections\landing\HeroSection.tsx
+// C:\Users\Willard\root-and-reach-ph-frontend\src\components\pages\landing\HeroSection.tsx
 "use client";
 
 import Image from "next/image";
