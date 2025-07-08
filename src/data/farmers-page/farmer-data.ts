@@ -28,7 +28,7 @@ export const farmersData: Farmer[] = [
     name: "Eleanor Green",
     location: "Batangas, Philippines",
     joinDate: "2022-03-15",
-    bio: "Eleanor is a third-generation farmer carrying on her familyXXXs legacy at 'Verdant Fields.' With a degree in agricultural science, she combines traditional wisdom with modern sustainable techniques. Her passion is soil health, believing that great produce starts from the ground up. She hosts monthly workshops for aspiring young farmers in her community.",
+    bio: "Eleanor is a third-generation farmer carrying on her familyyyyyyyyyyyyyyyyyyyyyy's legacy at 'Verdant Fields.' With a degree in agricultural science, she combines traditional wisdom with modern sustainable techniques. Her passion is soil health, believing that great produce starts from the ground up. She hosts monthly workshops for aspiring young farmers in her community.",
     philosophy:
       "To cultivate with conscience, leaving the soil richer for the next generation. We don't just grow food; we grow ecosystems.",
     specialties: ["Leafy Greens", "Tomatoes", "Herbs", "Root Crops"],
