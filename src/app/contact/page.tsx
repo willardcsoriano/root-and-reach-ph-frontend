@@ -18,8 +18,8 @@ const ContactPage = () => {
       <CTA
         title="Ready to Connect?"
         text="Whether you're a producer, consumer, or partner, we're excited to grow together."
-        buttonText="Learn More About Us"
-        buttonLink="/about"
+        buttonText="Back to Home" // Changed text
+        buttonLink="/" // Changed link
       />
     </div>
   );
