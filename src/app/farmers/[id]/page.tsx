@@ -1,4 +1,6 @@
-import React from "react";
+"use client"; // 👈 1. Mark as a Client Component
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,30 +12,55 @@ import {
   Quote,
   ShoppingBasket,
 } from "lucide-react";
-import { farmersData } from "@/data/farmers-page/farmer-data";
+import { farmersData, Farmer } from "@/data/farmers-page/farmer-data"; // Import Farmer type
 import FarmerProductCard from "@/components/pages/farmers-page/FarmerProductCard";
-import { notFound } from "next/navigation";
 
-// This interface defines the props that Next.js passes to a dynamic page
+// This interface defines the props for the page
 interface FarmerProfilePageProps {
   params: {
-    id: string; // The dynamic part of the URL, e.g., '1', '2', etc.
+    id: string;
   };
 }
 
-// This is now an async Server Component
-export default async function FarmerProfilePage({
-  params,
-}: FarmerProfilePageProps) {
-  // Find the farmer based on the ID from the URL.
-  // We use parseInt because our mock data uses numbers for IDs.
-  const farmer = farmersData.find((f) => f.id === parseInt(params.id, 10));
+// This is now a Client Component
+export default function FarmerProfilePage({ params }: FarmerProfilePageProps) {
+  const [farmer, setFarmer] = useState<Farmer | null | undefined>(undefined);
 
-  // If no farmer is found for the given ID, show a 404 page.
-  if (!farmer) {
-    notFound();
+  // 2. Find the farmer on the client side after the component mounts
+  useEffect(() => {
+    const foundFarmer = farmersData.find(
+      (f) => f.id === parseInt(params.id, 10),
+    );
+    setFarmer(foundFarmer || null); // Set to null if not found
+  }, [params.id]);
+
+  // 3. Show a loading state while we're finding the farmer
+  if (farmer === undefined) {
+    return (
+      <div className="text-center py-20">
+        <h1 className="text-2xl font-bold">Loading Farmer Profile...</h1>
+      </div>
+    );
   }
 
+  // 4. Show a "Not Found" message if the farmer doesn't exist
+  if (farmer === null) {
+    // In a client component, we can't use notFound() directly,
+    // so we render a "not found" state.
+    return (
+      <div className="text-center py-20">
+        <h1 className="text-2xl font-bold">Farmer Not Found</h1>
+        <Link
+          href="/farmers"
+          className="text-green-600 hover:underline mt-4 inline-block"
+        >
+          Return to All Farmers
+        </Link>
+      </div>
+    );
+  }
+
+  // 5. Render the page once the farmer data is available
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="container mx-auto p-4 md:p-8">
@@ -92,7 +119,6 @@ export default async function FarmerProfilePage({
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {farmer.products.map((product) => (
-                  // This component needs to be a client component because it uses hooks for state
                   <FarmerProductCard
                     key={product.id}
                     product={product}
