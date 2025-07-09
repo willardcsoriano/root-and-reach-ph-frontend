@@ -12,27 +12,29 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    // Added padding for better spacing on all screens
     <footer className="bg-gray-900 text-gray-300 py-12 px-6 sm:px-8 rounded-t-xl shadow-inner mt-16">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-        {/* Brand & Mission Statement */}
-        {/* On large screens, this column will span 2 grid columns for better balance */}
-        <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
+      {/* 
+        grid-cols-1       → up to 639px: 1 column
+        sm:grid-cols-2    → 640–1279px: 2 columns
+        xl:grid-cols-4    → ≥1280px: 4 columns
+      */}
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-10">
+        {/* Brand & Mission (spans both cols until xl) */}
+        <div className="sm:col-span-2 xl:col-span-1 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start mb-4">
+            {/* — ROOT & REACH COCONUT LOGO — */}
             <svg
-              className="h-8 w-8 mr-2 text-green-500"
+              className="h-8 w-8 mr-2 text-yellow-800"
+              viewBox="0 0 64 64"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
             >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <path d="M12 18s-4-2-4-6V7l4-2 4 2v5c0 4-4 6-4 6z" />
+              <circle cx="32" cy="32" r="28" fill="currentColor" />
+              <circle cx="22" cy="24" r="4" fill="#FFF" fillOpacity="0.8" />
+              <circle cx="32" cy="20" r="4" fill="#FFF" fillOpacity="0.8" />
+              <circle cx="42" cy="24" r="4" fill="#FFF" fillOpacity="0.8" />
             </svg>
             <span className="text-3xl font-bold text-white tracking-wide">
-              Root & Reach
+              Root &amp; Reach
             </span>
           </div>
           <p className="text-gray-400 leading-relaxed text-sm">
@@ -80,7 +82,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Info */}
         <div className="text-center sm:text-left">
           <h3 className="text-xl font-semibold text-white mb-5">Contact Us</h3>
           <ul className="space-y-4">
@@ -116,8 +118,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media & Newsletter */}
-        <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
+        {/* Social & Newsletter (spans both cols until xl) */}
+        <div className="sm:col-span-2 xl:col-span-1 text-center sm:text-left">
           <h3 className="text-xl font-semibold text-white mb-5">
             Connect With Us
           </h3>
@@ -147,6 +149,7 @@ const Footer = () => {
               <Linkedin size={24} />
             </Link>
           </div>
+
           <h4 className="text-lg font-medium text-white mb-3">Stay Updated!</h4>
           <form className="flex flex-col sm:flex-row gap-2">
             <input
@@ -165,10 +168,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Information */}
       <div className="border-t border-gray-700 mt-10 pt-8 text-center text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Root & Reach Philippines. All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Root &amp; Reach Philippines. All
+        rights reserved.
       </div>
     </footer>
   );
