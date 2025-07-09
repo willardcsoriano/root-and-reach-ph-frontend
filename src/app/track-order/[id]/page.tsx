@@ -1,3 +1,4 @@
+// C:\Users\Willard\root-and-reach-ph-frontend\src\app\track-order\[id]\page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -164,12 +165,18 @@ export default function TrackOrderPage() {
             <div className="border-t pt-6 mt-6">
               <h3 className="font-bold mb-4">Need Help?</h3>
               <div className="space-y-3">
-                <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
+                <Link
+                  href={`/track-order/${order.id}/message`}
+                  className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
+                >
                   <MessageSquare size={20} /> Message Driver
-                </button>
-                <button className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition">
+                </Link>
+                <Link
+                  href="/support"
+                  className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition"
+                >
                   <Phone size={20} /> Call Support
-                </button>
+                </Link>
               </div>
             </div>
           </div>
