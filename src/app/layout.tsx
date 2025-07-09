@@ -10,6 +10,9 @@ export const metadata = {
   title: "Root & Reach PH",
   description: "Rooted in Purpose. Reaching Beyond.",
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 // This is the one, correct RootLayout component
 export default function RootLayout({ children }: { children: ReactNode }) {

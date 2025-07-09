@@ -21,381 +21,194 @@ export interface Farmer {
   products: Product[];
 }
 
-// --- MOCK DATA ---
+// --- MOCK DATA (Revised with accurate placeholder images) ---
 export const farmersData: Farmer[] = [
   {
     id: 1,
-    name: "Eleanor Green",
-    location: "Batangas, Philippines",
+    name: "Lorna Reyes",
+    location: "Lipa, Batangas",
     joinDate: "2022-03-15",
-    bio: "Eleanor is a third-generation farmer carrying on her family's legacy at 'Verdant Fields.' With a degree in agricultural science, she combines traditional wisdom with modern sustainable techniques. Her passion is soil health, believing that great produce starts from the ground up. She hosts monthly workshops for aspiring young farmers in her community.",
-    philosophy:
-      "To cultivate with conscience, leaving the soil richer for the next generation. We don't just grow food; we grow ecosystems.",
-    specialties: ["Leafy Greens", "Tomatoes", "Herbs", "Root Crops"],
-    certifications: ["Organic Certified", "Good Agricultural Practices (GAP)"],
+    bio: "Lorna is a third-generation coffee farmer at 'Café de Lipa', carrying on the proud tradition of cultivating world-class Kapeng Barako (Liberica coffee). Her passion is preserving the heritage of Batangas coffee.",
+    philosophy: "Every cup should tell the story of our soil and our history.",
+    specialties: ["Kapeng Barako", "Robusta Coffee", "Tablea"],
+    certifications: [
+      "Organic Certified",
+      "Philippine Coffee Quality Competition",
+    ],
     imageUrl:
-      "https://images.pexels.com/photos/4207783/pexels-photo-4207783.jpeg",
+      "https://placehold.co/600x400/6B4F4F/ffffff?text=Batangas+Coffee+Farmer",
     gallery: [
-      "https://images.pexels.com/photos/235659/pexels-photo-235659.jpeg",
-      "https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg",
-      "https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg",
+      "https://placehold.co/400x300/A47551/ffffff?text=Coffee+Drying",
+      "https://placehold.co/400x300/4E3629/ffffff?text=Roasted+Beans",
+      "https://placehold.co/400x300/E0C097/ffffff?text=Lipa+Farmstead",
     ],
     products: [
       {
         id: 101,
-        name: "Heirloom Tomatoes",
-        price: 180,
-        unit: "kg",
+        name: "Kapeng Barako Beans",
+        price: 450,
+        unit: "500g",
         imageUrl:
-          "https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg",
+          "https://placehold.co/400x300/4E3629/ffffff?text=Kapeng+Barako",
       },
       {
         id: 102,
-        name: "Fresh Basil",
-        price: 50,
-        unit: "bunch",
-        imageUrl:
-          "https://images.pexels.com/photos/161556/basil-herbs-aromatic-mediterranean-161556.jpeg",
+        name: "Pure Cacao Tablea",
+        price: 150,
+        unit: "roll",
+        imageUrl: "https://placehold.co/400x300/5D4037/ffffff?text=Tablea",
       },
       {
         id: 103,
-        name: "Romaine Lettuce",
+        name: "Free-Range Brown Eggs",
         price: 120,
-        unit: "head",
-        imageUrl:
-          "https://images.pexels.com/photos/59596/lettuce-leaf-salad-green-salad-Healthy-59596.jpeg",
+        unit: "dozen",
+        imageUrl: "https://placehold.co/400x300/D4A276/ffffff?text=Fresh+Eggs",
       },
     ],
   },
   {
     id: 2,
-    name: "Samuel Reyes",
-    location: "Bukidnon, Philippines",
+    name: "Elena & Ben Santiago",
+    location: "Science City of Muñoz, Nueva Ecija",
     joinDate: "2021-11-20",
-    bio: "Samuel manages a high-altitude farm that has been in his family for over 50 years. He is a master of intercropping, growing world-class coffee beans alongside tropical fruits. He believes in biodiversity and his farm is a sanctuary for local bird species. He is a respected elder in the Bukidnon coffee growers community.",
-    philosophy:
-      "The mountain gives us its gifts; it is our duty to protect it in return. Every coffee bean holds the story of the land.",
-    specialties: ["Coffee", "Pineapple", "Avocado", "Banana"],
-    certifications: ["Fair Trade Certified", "Rainforest Alliance"],
-    imageUrl:
-      "https://images.pexels.com/photos/5921808/pexels-photo-5921808.jpeg",
+    bio: "Husband and wife team Elena and Ben have been tending their five-hectare rice paddy for over 40 years. They are pioneers in practicing integrated pest management for heirloom rice varieties.",
+    philosophy: "The land is a gift we borrow from our children.",
+    specialties: ["Heirloom Rice", "Organic Brown Rice"],
+    certifications: ["PhilGAP (Good Agricultural Practices)"],
+    imageUrl: "https://placehold.co/600x400/84cc16/ffffff?text=Rice+Farmers",
     gallery: [
-      "https://images.pexels.com/photos/3376794/pexels-photo-3376794.jpeg",
-      "https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg",
-      "https://images.pexels.com/photos/8949867/pexels-photo-8949867.jpeg",
+      "https://placehold.co/400x300/a3e635/ffffff?text=Rice+Paddy",
+      "https://placehold.co/400x300/c2c2a3/ffffff?text=Harvest+Time",
+      "https://placehold.co/400x300/e6e6e6/ffffff?text=Sacks+of+Rice",
     ],
     products: [
       {
         id: 201,
-        name: "Arabica Coffee Beans",
-        price: 600,
-        unit: "500g",
+        name: "Organic Tinawon Rice",
+        price: 95,
+        unit: "kg",
         imageUrl:
-          "https://images.pexels.com/photos/4109744/pexels-photo-4109744.jpeg",
+          "https://placehold.co/400x300/cbcba9/ffffff?text=Tinawon+Rice",
       },
       {
         id: 202,
-        name: "Sweet Pineapples",
-        price: 80,
-        unit: "piece",
-        imageUrl:
-          "https://images.pexels.com/photos/143582/pexels-photo-143582.jpeg",
-      },
-      {
-        id: 203,
-        name: "Hass Avocados",
-        price: 250,
+        name: "Organic Brown Rice",
+        price: 85,
         unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg",
+        imageUrl: "https://placehold.co/400x300/c7a683/ffffff?text=Brown+Rice",
       },
     ],
   },
   {
     id: 3,
-    name: "Marisol Tan",
-    location: "Cebu, Philippines",
+    name: 'Ricardo "Mang Rick" Santos',
+    location: "Calinan, Davao City",
     joinDate: "2023-01-10",
-    bio: "Marisol runs a small seaside farm where she raises salt-tolerant vegetables and herbs. Inspired by her coastal roots, she experiments with hydroponics and aquaponics, aiming to reduce freshwater usage. She teaches local schools about sustainable aquaculture.",
-    philosophy: "Water is life—let us grow with respect for every drop.",
-    specialties: ["Water Spinach", "Sea Lettuce", "Bok Choy"],
-    certifications: ["Aquaponics Certified"],
+    bio: 'Known locally as the "King of Fruits," Mang Rick manages a thriving orchard filled with durian, mangosteen, and pomelo trees. He advocates for agroforestry to maintain biodiversity.',
+    philosophy: "Let nature do the work, and the fruit will be twice as sweet.",
+    specialties: ["Durian", "Mangosteen", "Pomelo", "Cacao"],
+    certifications: ["Rainforest Alliance", "Fair Trade"],
     imageUrl:
-      "https://images.pexels.com/photos/4666757/pexels-photo-4666757.jpeg",
+      "https://placehold.co/600x400/fde047/1e293b?text=Davao+Fruit+Farmer",
     gallery: [
-      "https://images.pexels.com/photos/1669783/pexels-photo-1669783.jpeg",
-      "https://images.pexels.com/photos/461428/pexels-photo-461428.jpeg",
-      "https://images.pexels.com/photos/59927/pexels-photo-59927.jpeg",
+      "https://placehold.co/400x300/fef08a/1e293b?text=Durian+Tree",
+      "https://placehold.co/400x300/7e22ce/ffffff?text=Mangosteen",
+      "https://placehold.co/400x300/d9f99d/1e293b?text=Pomelo+Orchard",
     ],
     products: [
       {
         id: 301,
-        name: "Hydroponic Bok Choy",
-        price: 140,
+        name: "Puyat Durian",
+        price: 280,
         unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/1111313/pexels-photo-1111313.jpeg",
+        imageUrl: "https://placehold.co/400x300/fef08a/1e293b?text=Durian",
       },
       {
         id: 302,
-        name: "Sea Lettuce Bundle",
-        price: 90,
-        unit: "bunch",
-        imageUrl:
-          "https://images.pexels.com/photos/4248570/pexels-photo-4248570.jpeg",
+        name: "Fresh Mangosteen",
+        price: 180,
+        unit: "kg",
+        imageUrl: "https://placehold.co/400x300/7e22ce/ffffff?text=Mangosteen",
       },
       {
         id: 303,
-        name: "Water Spinach",
-        price: 60,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg",
+        name: "Single-Origin Cacao Beans",
+        price: 500,
+        unit: "250g",
+        imageUrl: "https://placehold.co/400x300/5D4037/ffffff?text=Cacao+Beans",
       },
     ],
   },
   {
     id: 4,
-    name: "Carlo Mendoza",
-    location: "Laguna, Philippines",
+    name: "Anita Gomez",
+    location: "La Trinidad, Benguet",
     joinDate: "2022-07-05",
-    bio: "Carlo specializes in high-tech greenhouse farming of peppers and tomatoes. He integrates IoT sensors to monitor microclimate conditions and optimizes yield year-round. He regularly publishes his findings for the local ag-tech community.",
-    philosophy: "Innovation nourishes both the land and the mind.",
-    specialties: ["Bell Peppers", "Cherry Tomatoes"],
-    certifications: ["GAP", "Hydroponic Practices"],
-    imageUrl:
-      "https://images.pexels.com/photos/6207654/pexels-photo-6207654.jpeg",
+    bio: "In the cool highlands of Benguet, Anita operates a greenhouse farm specializing in crisp lettuces, sweet strawberries, and fresh herbs, supplying top restaurants in the city.",
+    philosophy: "Good food starts with cool weather and careful hands.",
+    specialties: ["Lettuce Varieties", "Strawberries", "Herbs"],
+    certifications: ["Good Agricultural Practices (GAP)"],
+    imageUrl: "https://placehold.co/600x400/fb7185/ffffff?text=Benguet+Farmer",
     gallery: [
-      "https://images.pexels.com/photos/1250317/pexels-photo-1250317.jpeg",
-      "https://images.pexels.com/photos/1440971/pexels-photo-1440971.jpeg",
-      "https://images.pexels.com/photos/1283215/pexels-photo-1283215.jpeg",
+      "https://placehold.co/400x300/e11d48/ffffff?text=Strawberry+Field",
+      "https://placehold.co/400x300/bef264/1e293b?text=Crisp+Lettuce",
+      "https://placehold.co/400x300/a3e635/1e293b?text=Herb+Garden",
     ],
     products: [
       {
         id: 401,
-        name: "Yellow Bell Peppers",
-        price: 200,
-        unit: "kg",
+        name: "Fresh Strawberries",
+        price: 400,
+        unit: "250g",
         imageUrl:
-          "https://images.pexels.com/photos/1119756/pexels-photo-1119756.jpeg",
+          "https://placehold.co/400x300/f43f5e/ffffff?text=Strawberries",
       },
       {
         id: 402,
-        name: "Heirloom Cherry Tomatoes",
-        price: 220,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/130053/pexels-photo-130053.jpeg",
+        name: "Romaine Lettuce",
+        price: 120,
+        unit: "head",
+        imageUrl: "https://placehold.co/400x300/84cc16/1e293b?text=Romaine",
+      },
+      {
+        id: 403,
+        name: "Fresh Rosemary",
+        price: 60,
+        unit: "bunch",
+        imageUrl: "https://placehold.co/400x300/4d7c0f/ffffff?text=Rosemary",
       },
     ],
   },
   {
     id: 5,
-    name: "Isabel Cruz",
-    location: "Iloilo, Philippines",
-    joinDate: "2021-05-22",
-    bio: "Isabel runs a traditional rice paddy that practices integrated pest management. She’s passionate about heirloom rice varieties and hosts harvest festivals to celebrate local culture.",
-    philosophy: "Every grain tells our story.",
-    specialties: ["Heirloom Rice", "Duck-Rice Farming"],
-    certifications: ["Integrated Pest Management"],
-    imageUrl:
-      "https://images.pexels.com/photos/1024969/pexels-photo-1024969.jpeg",
+    name: "Tia Pacing",
+    location: "Lucban, Quezon",
+    joinDate: "2022-02-18",
+    bio: "Tia Pacing is famous in her town for two things: her colorful Pahiyas decorations and her rich, aromatic coconut products. She processes everything by hand, from grating the coconut to bottling the oil.",
+    philosophy: "Nothing from the coconut is ever wasted.",
+    specialties: ["Coconut Oil", "Pancit Habhab", "Longganisang Lucban"],
+    certifications: ["DTI Registered"],
+    imageUrl: "https://placehold.co/600x400/78350f/ffffff?text=Quezon+Artisan",
     gallery: [
-      "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg",
-      "https://images.pexels.com/photos/4144723/pexels-photo-4144723.jpeg",
-      "https://images.pexels.com/photos/3174076/pexels-photo-3174076.jpeg",
+      "https://placehold.co/400x300/a16207/ffffff?text=Coconut+Grove",
+      "https://placehold.co/400x300/f87171/ffffff?text=Pahiyas+Festival",
+      "https://placehold.co/400x300/eab308/ffffff?text=Fresh+Buko",
     ],
     products: [
       {
         id: 501,
-        name: "Organic Jasmine Rice",
-        price: 80,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/6434072/pexels-photo-6434072.jpeg",
+        name: "Virgin Coconut Oil",
+        price: 250,
+        unit: "250ml",
+        imageUrl: "https://placehold.co/400x300/fefce8/78350f?text=VCO",
       },
       {
         id: 502,
-        name: "Sticky Rice (Malagkit)",
-        price: 100,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/46239/rice-jasmine-cooking-food-46239.jpeg",
-      },
-    ],
-  },
-  {
-    id: 6,
-    name: "Rafael Gutierrez",
-    location: "Pampanga, Philippines",
-    joinDate: "2022-10-01",
-    bio: "Rafael tends a sprawling sugarcane plantation using renewable energy for milling. He’s spearheaded a biofuel pilot project and trains other farmers on cooperative models.",
-    philosophy: "Sweet solutions grow in strong communities.",
-    specialties: ["Sugarcane", "Biofuel Crops"],
-    certifications: ["Fair Trade"],
-    imageUrl:
-      "https://images.pexels.com/photos/10430629/pexels-photo-10430629.jpeg",
-    gallery: [
-      "https://images.pexels.com/photos/4051940/pexels-photo-4051940.jpeg",
-      "https://images.pexels.com/photos/4258674/pexels-photo-4258674.jpeg",
-      "https://images.pexels.com/photos/4579471/pexels-photo-4579471.jpeg",
-    ],
-    products: [
-      {
-        id: 601,
-        name: "Raw Sugarcane Juice",
-        price: 60,
-        unit: "liter",
-        imageUrl:
-          "https://images.pexels.com/photos/53413/pexels-photo-53413.jpeg",
-      },
-      {
-        id: 602,
-        name: "Organic Muscovado Sugar",
-        price: 150,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/2831814/pexels-photo-2831814.jpeg",
-      },
-    ],
-  },
-  {
-    id: 7,
-    name: "Lucia Santos",
-    location: "Bohol, Philippines",
-    joinDate: "2023-04-12",
-    bio: "Lucia manages a cocoa and cacao farm under agroforestry principles. She harvests rare heirloom cacao and runs chocolate-making workshops for tourists.",
-    philosophy: "Shade and diversity yield the finest chocolate.",
-    specialties: ["Cacao", "Understory Crops"],
-    certifications: ["Fair Trade", "Rainforest Alliance"],
-    imageUrl:
-      "https://images.pexels.com/photos/3650702/pexels-photo-3650702.jpeg",
-    gallery: [
-      "https://images.pexels.com/photos/2768415/pexels-photo-2768415.jpeg",
-      "https://images.pexels.com/photos/3746763/pexels-photo-3746763.jpeg",
-      "https://images.pexels.com/photos/3279410/pexels-photo-3279410.jpeg",
-    ],
-    products: [
-      {
-        id: 701,
-        name: "Single-Origin Cacao Beans",
-        price: 500,
-        unit: "250g",
-        imageUrl:
-          "https://images.pexels.com/photos/686316/pexels-photo-686316.jpeg",
-      },
-      {
-        id: 702,
-        name: "Dark Chocolate Bar",
-        price: 200,
-        unit: "bar",
-        imageUrl:
-          "https://images.pexels.com/photos/1309983/pexels-photo-1309983.jpeg",
-      },
-    ],
-  },
-  {
-    id: 8,
-    name: "Diego Velasco",
-    location: "Quezon, Philippines",
-    joinDate: "2021-09-30",
-    bio: "Diego specializes in coffee varietals in the cool highlands of Quezon. He’s known for his barrel-aged coffee and has won regional barista awards.",
-    philosophy: "Patience and time unlock depth in every bean.",
-    specialties: ["Barrel-Aged Coffee", "Liberica Beans"],
-    certifications: ["Specialty Coffee Association"],
-    imageUrl:
-      "https://images.pexels.com/photos/4342134/pexels-photo-4342134.jpeg",
-    gallery: [
-      "https://images.pexels.com/photos/4147051/pexels-photo-4147051.jpeg",
-      "https://images.pexels.com/photos/5459420/pexels-photo-5459420.jpeg",
-      "https://images.pexels.com/photos/239974/pexels-photo-239974.jpeg",
-    ],
-    products: [
-      {
-        id: 801,
-        name: "Barrel-Aged Arabica",
-        price: 650,
-        unit: "250g",
-        imageUrl:
-          "https://images.pexels.com/photos/1490004/pexels-photo-1490004.jpeg",
-      },
-      {
-        id: 802,
-        name: "Liberica Coffee Beans",
-        price: 400,
-        unit: "250g",
-        imageUrl:
-          "https://images.pexels.com/photos/4342134/pexels-photo-4342134.jpeg",
-      },
-    ],
-  },
-  {
-    id: 9,
-    name: "Florencia De Guzman",
-    location: "Davao, Philippines",
-    joinDate: "2022-02-18",
-    bio: "Florencia cultivates exotic fruits—like dragon fruit and star apple—on her hillside orchard. She’s pioneering grafting techniques to increase disease resistance.",
-    philosophy: "Diversity is the spice of growth.",
-    specialties: ["Dragon Fruit", "Star Apple"],
-    certifications: ["GAP"],
-    imageUrl:
-      "https://images.pexels.com/photos/6348071/pexels-photo-6348071.jpeg",
-    gallery: [
-      "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg",
-      "https://images.pexels.com/photos/5905475/pexels-photo-5905475.jpeg",
-      "https://images.pexels.com/photos/4516320/pexels-photo-4516320.jpeg",
-    ],
-    products: [
-      {
-        id: 901,
-        name: "Dragon Fruit Pack",
-        price: 120,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/8293911/pexels-photo-8293911.jpeg",
-      },
-      {
-        id: 902,
-        name: "Star Apples",
-        price: 150,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/375356/pexels-photo-375356.jpeg",
-      },
-    ],
-  },
-  {
-    id: 10,
-    name: "Beatriz Luna",
-    location: "Nueva Ecija, Philippines",
-    joinDate: "2021-12-05",
-    bio: "Beatriz heads a large rice-and-vegetable cooperative. She introduced no-till farming to improve yields and reduce erosion, and mentors neighboring cooperatives on best practices.",
-    philosophy: "Collaboration cultivates prosperity for all.",
-    specialties: ["Rice", "Tomatoes", "Eggplants"],
-    certifications: ["Organic Certified", "Cooperative Leader Award"],
-    imageUrl:
-      "https://images.pexels.com/photos/6754313/pexels-photo-6754313.jpeg",
-    gallery: [
-      "https://images.pexels.com/photos/6754315/pexels-photo-6754315.jpeg",
-      "https://images.pexels.com/photos/6754314/pexels-photo-6754314.jpeg",
-      "https://images.pexels.com/photos/6754312/pexels-photo-6754312.jpeg",
-    ],
-    products: [
-      {
-        id: 1001,
-        name: "Premium Rice",
-        price: 70,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/6754316/pexels-photo-6754316.jpeg",
-      },
-      {
-        id: 1002,
-        name: "Fresh Eggplants",
-        price: 90,
-        unit: "kg",
-        imageUrl:
-          "https://images.pexels.com/photos/6754317/pexels-photo-6754317.jpeg",
+        name: "Longganisang Lucban",
+        price: 180,
+        unit: "dozen",
+        imageUrl: "https://placehold.co/400x300/ef4444/ffffff?text=Longganisa",
       },
     ],
   },

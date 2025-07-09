@@ -109,7 +109,7 @@ const FarmersPage = () => {
             nation. We would love to help you grow your reach.
           </p>
           <Link
-            href="/partner-application"
+            href="/producers/signup"
             className="mt-8 inline-block bg-green-600 text-white font-bold text-lg py-3 px-8 rounded-full hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Become a Partner
