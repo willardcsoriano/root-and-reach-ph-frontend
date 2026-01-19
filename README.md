@@ -1,4 +1,4 @@
-# 🌱 Root & Reach PH — Human-Computer Interaction Prototype
+# 🌱 Root & Reach PH 
 
 [![Status](https://img.shields.io/badge/status-prototype-blue.svg)]()  
 [![Built With](https://img.shields.io/badge/Made%20with-Next.js%20%7C%20React%20%7C%20TypeScript-black.svg)]()  
