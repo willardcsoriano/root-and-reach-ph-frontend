@@ -122,12 +122,12 @@ src/
 
 ## 📬 Contact
 
-👤 **Willard C. Soriano**  
+👤 **Willard C. Soriano**
 
-- [GitHub](https://github.com/willardcsoriano)  
-- [LinkedIn](https://www.linkedin.com/in/willardcsoriano/)  
-- [Facebook](https://web.facebook.com/willardcsoriano/)  
-- 📧 [wcsoriano@mymail.mapua.edu.ph](mailto:wcsoriano@mymail.mapua.edu.ph)  
+[![GitHub](https://img.shields.io/badge/GitHub-willardcsoriano-black?logo=github)](https://github.com/willardcsoriano)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Willard%20Soriano-blue?logo=linkedin)](https://www.linkedin.com/in/willardcsoriano/)  
+[![Facebook](https://img.shields.io/badge/Facebook-Willard%20Soriano-1877F2?logo=facebook&logoColor=white)](https://web.facebook.com/willardcsoriano/)  
+[![Email](https://img.shields.io/badge/Email-wcsoriano%40mymail.mapua.edu.ph-red?logo=gmail&logoColor=white)](mailto:wcsoriano@mymail.mapua.edu.ph)
 
 ---
 
