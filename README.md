@@ -110,9 +110,9 @@ src/
 
 ## 📸 Screenshots
 
-> *(Optional: Insert screenshots or GIFs for demo preview.)*  
+> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
+> 
 
-![Root & Reach PH Preview](public/preview.png)
 
 ---
 
