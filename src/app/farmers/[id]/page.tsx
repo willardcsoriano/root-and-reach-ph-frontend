@@ -45,7 +45,7 @@ export default function Page({ params }: { params: any }) {
   if (!farmer) notFound();
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50">
       <div className="container mx-auto p-4 md:p-8">
         {/* Back link */}
         <Link

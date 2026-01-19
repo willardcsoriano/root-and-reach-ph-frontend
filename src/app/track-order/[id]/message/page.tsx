@@ -21,7 +21,7 @@ const MessageDriverPage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col">
+    <div className="bg-gray-100 flex flex-col">
       {/* Header */}
       <div className="bg-white shadow-md p-4 flex items-center gap-4 sticky top-0 z-10">
         <Link

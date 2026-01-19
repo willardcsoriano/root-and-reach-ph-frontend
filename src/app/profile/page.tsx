@@ -61,7 +61,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+    <div className="flex items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-md">
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <div className="text-center mb-8">

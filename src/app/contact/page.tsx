@@ -7,7 +7,7 @@ import CTA from "@/components/ui/CTA"; // Using the reusable CTA
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-800">
+    <div className="bg-gray-50 font-inter text-gray-800">
       <ContactHero />
 
       <div className="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">

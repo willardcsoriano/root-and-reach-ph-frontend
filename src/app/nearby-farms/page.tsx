@@ -1,33 +1,33 @@
 "use client"; // This component uses state and browser APIs, so it's a Client Component.
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { MapPin, Crosshair, Search, LoaderCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { MapPin, Crosshair, Search, LoaderCircle } from "lucide-react";
 
 const NearbyFarmsPage = () => {
   const router = useRouter();
-  const [selectedLocation, setSelectedLocation] = useState('');
-  const [statusMessage, setStatusMessage] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   // A predefined list of serviceable areas.
   const locations = [
-    'Quezon City',
-    'Makati',
-    'Taguig',
-    'Pasig',
-    'Mandaluyong',
-    'Manila',
+    "Quezon City",
+    "Makati",
+    "Taguig",
+    "Pasig",
+    "Mandaluyong",
+    "Manila",
   ];
 
   const handleGeolocate = () => {
     if (!navigator.geolocation) {
-      setStatusMessage('Geolocation is not supported by your browser.');
+      setStatusMessage("Geolocation is not supported by your browser.");
       return;
     }
 
     setIsLoading(true);
-    setStatusMessage('Fetching your location...');
+    setStatusMessage("Fetching your location...");
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -35,26 +35,30 @@ const NearbyFarmsPage = () => {
         // lookup to find the city or send them to your backend.
         const { latitude, longitude } = position.coords;
         console.log(`Location found: Lat ${latitude}, Lon ${longitude}`);
-        
+
         // For this demo, we'll simulate finding a nearby major city.
-        setSelectedLocation('Quezon City'); 
-        setStatusMessage('Success! We found a serviceable area near you.');
+        setSelectedLocation("Quezon City");
+        setStatusMessage("Success! We found a serviceable area near you.");
         setIsLoading(false);
       },
       (error) => {
         if (error.code === error.PERMISSION_DENIED) {
-          setStatusMessage('Location access denied. Please select a location manually.');
+          setStatusMessage(
+            "Location access denied. Please select a location manually.",
+          );
         } else {
-          setStatusMessage('Could not determine your location. Please select one.');
+          setStatusMessage(
+            "Could not determine your location. Please select one.",
+          );
         }
         setIsLoading(false);
-      }
+      },
     );
   };
 
   const handleSearch = () => {
     if (!selectedLocation) {
-      setStatusMessage('Please select a location first.');
+      setStatusMessage("Please select a location first.");
       return;
     }
     // Navigate to a products or farmers page filtered by the selected location.
@@ -62,9 +66,8 @@ const NearbyFarmsPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-green-50/50 p-4">
+    <div className="flex items-center justify-center bg-green-50/50 p-4">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center transform transition-all">
-        
         {/* Header */}
         <div className="flex justify-center mb-4">
           <div className="p-3 bg-green-100 rounded-full">
@@ -84,21 +87,27 @@ const NearbyFarmsPage = () => {
             <select
               value={selectedLocation}
               onChange={(e) => {
-                setSelectedLocation(e.target.value)
-                setStatusMessage('');
+                setSelectedLocation(e.target.value);
+                setStatusMessage("");
               }}
               className="w-full text-lg appearance-none bg-white pl-4 pr-10 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
             >
-              <option value="" disabled>-- Select your city --</option>
+              <option value="" disabled>
+                -- Select your city --
+              </option>
               {locations.map((loc) => (
-                <option key={loc} value={loc}>{loc}</option>
+                <option key={loc} value={loc}>
+                  {loc}
+                </option>
               ))}
             </select>
           </div>
 
           <div className="relative flex items-center">
             <hr className="w-full border-t border-gray-300" />
-            <span className="absolute left-1/2 -translate-x-1/2 bg-white px-2 text-sm text-gray-500">OR</span>
+            <span className="absolute left-1/2 -translate-x-1/2 bg-white px-2 text-sm text-gray-500">
+              OR
+            </span>
           </div>
 
           <button
@@ -117,9 +126,7 @@ const NearbyFarmsPage = () => {
 
         {/* Status Message */}
         {statusMessage && (
-          <p className="text-sm text-gray-600 mt-4 h-5">
-            {statusMessage}
-          </p>
+          <p className="text-sm text-gray-600 mt-4 h-5">{statusMessage}</p>
         )}
 
         {/* Search Button */}
@@ -129,8 +136,8 @@ const NearbyFarmsPage = () => {
             disabled={!selectedLocation}
             className="w-full bg-green-600 text-white font-bold text-xl py-3 px-6 rounded-lg hover:bg-green-700 disabled:bg-green-300 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            <div className='flex justify-center gap-2'>
-              <Search size={28}/>
+            <div className="flex justify-center gap-2">
+              <Search size={28} />
               Find Farms
             </div>
           </button>

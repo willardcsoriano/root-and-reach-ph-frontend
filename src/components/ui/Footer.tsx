@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-6 sm:px-8 rounded-t-xl shadow-inner mt-16">
+    <footer className="bg-gray-900 text-gray-300 py-12 px-6 sm:px-8 shadow-inner">
       {/* 
         grid-cols-1       → up to 639px: 1 column
         sm:grid-cols-2    → 640–1279px: 2 columns

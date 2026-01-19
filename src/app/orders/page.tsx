@@ -39,7 +39,7 @@ const MyOrdersPage = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+    <div className="bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         {/* Container for the title and the new button */}
         <div className="flex justify-between items-center mb-8">

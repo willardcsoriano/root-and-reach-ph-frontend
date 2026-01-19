@@ -57,7 +57,7 @@ const Header = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen((o) => !o);
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg rounded-b-xl">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">

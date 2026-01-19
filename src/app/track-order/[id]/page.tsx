@@ -67,7 +67,7 @@ export default function TrackOrderPage() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50">
       <div className="container mx-auto p-4 md:p-8">
         <Link
           href="/orders"

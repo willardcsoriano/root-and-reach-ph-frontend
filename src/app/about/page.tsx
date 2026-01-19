@@ -10,7 +10,7 @@ import CallToActionSection from "@/components/pages/about-page/CallToActionSecti
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-800">
+    <div className="bg-gray-50 font-inter text-gray-800">
       <AboutHero />
       <MissionVisionSection />
       <OurStorySection />

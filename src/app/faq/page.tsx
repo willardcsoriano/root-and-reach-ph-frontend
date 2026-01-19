@@ -4,7 +4,7 @@ import CTA from "@/components/ui/CTA";
 
 const FAQPage = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50">
       {/* The actual FAQ content, reused as a component */}
       <FAQSection />
 

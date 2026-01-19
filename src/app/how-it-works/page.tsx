@@ -73,7 +73,7 @@ const HowItWorksStep = ({
 // The main page component
 const HowItWorksPage = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-green-50 text-center py-20 md:py-24 px-4">
         <h1 className="text-5xl md:text-6xl font-extrabold font-inter tracking-tight text-green-800">

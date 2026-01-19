@@ -12,6 +12,7 @@
                 "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", 
                "Courier New", monospace;
+    color-scheme: light;               
 }
 
 /* Dark mode overrides */

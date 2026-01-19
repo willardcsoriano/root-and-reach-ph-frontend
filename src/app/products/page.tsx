@@ -52,7 +52,7 @@ const ProductsPage = () => {
   }, [selectedCategory, searchQuery, sortOption]);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-800">
+    <div className="bg-gray-50 font-inter text-gray-800">
       {/* Products Hero/Banner Section */}
       <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-16 md:py-20 rounded-b-3xl shadow-lg">
         <div className="container mx-auto px-6 text-center">

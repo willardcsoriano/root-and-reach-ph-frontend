@@ -1,20 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Phone, Mail, Clock, ArrowLeft } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 
 const SupportPage = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 pb-16 pt-16">
       <div className="container mx-auto p-4 md:p-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-green-700 hover:text-green-900 mb-8 font-semibold"
-        >
-          <ArrowLeft size={18} /> Back to Home
-        </Link>
-
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold text-green-800">

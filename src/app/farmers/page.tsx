@@ -30,7 +30,7 @@ const FarmersPage = () => {
   }, [searchTerm, filterSpecialty]);
 
   return (
-    <div className="bg-green-50 min-h-screen">
+    <div className="bg-green-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-700 to-green-900 text-white text-center py-16 px-4">
         <Sprout size={48} className="mx-auto mb-4 text-green-300" />
