@@ -113,7 +113,9 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots  
+
+The following screens highlight key user flows and interface decisions, focusing on discovery, trust, and ease of navigation across the platform.  
 
 > <img width="1366" height="728" alt="Homepage hero section" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
 **Homepage** – Landing page highlighting the platform’s mission and featured actions.
