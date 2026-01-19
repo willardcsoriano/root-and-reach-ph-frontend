@@ -66,8 +66,8 @@ const NearbyFarmsPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-green-50/50 p-4">
-      <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center transform transition-all">
+    <div className="flex flex-grow items-center justify-center bg-gray-300 px-4 py-16 md:py-24">
+      <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
         {/* Header */}
         <div className="flex justify-center mb-4">
           <div className="p-3 bg-green-100 rounded-full">
