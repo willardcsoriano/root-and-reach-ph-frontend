@@ -110,9 +110,13 @@ src/
 
 ## 📸 Screenshots
 
-> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
-> 
+> <img width="1366" height="728" alt="Homepage hero section" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
 
+**Homepage** – Landing page highlighting the platform’s mission and featured actions.
+
+> <img width="1366" height="728" alt="Nearby Farms page" src="https://github.com/user-attachments/assets/957b848b-910a-4109-8cdc-90d548320167" />
+
+**Nearby Farms page** – Users can search for farms by city or use their current location.
 
 ---
 
