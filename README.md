@@ -4,10 +4,14 @@
 [![Built With](https://img.shields.io/badge/Made%20with-Next.js%20%7C%20React%20%7C%20TypeScript-black.svg)]()  
 [![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-lightgrey.svg)](https://root-and-reach-ph-frontend.vercel.app/)
 
-**Root & Reach PH** is a prototype web application designed for our **Human–Computer Interaction (HCI)** course.  
-It envisions a digital platform where **local producers can connect directly with consumers**, promoting transparency, sustainability, and community empowerment.  
+**Root & Reach PH** is a user-centered e-commerce prototype that connects local producers directly with consumers.  
+The platform focuses on transparency, sustainability, and community-driven commerce by making it easy to discover, trust, and support nearby farmers.
+
+Originally developed as part of a **Human–Computer Interaction** course, the project emphasizes usability, accessibility, and real-world interaction patterns.
 
 🔗 **Live Demo:** [root-and-reach-ph-frontend.vercel.app](https://root-and-reach-ph-frontend.vercel.app/)
+
+> ⚠️ This is a front-end prototype using mock data; backend services and payments are not implemented.
 
 ---
 
@@ -26,8 +30,9 @@ It envisions a digital platform where **local producers can connect directly wit
 
 ## 📝 Purpose
 
-This project was created to demonstrate **user-centered design** in a real-world e-commerce scenario.  
-Our goal: make buying local produce **as simple, transparent, and engaging** as possible for both farmers and consumers.
+Root & Reach PH explores how thoughtful interaction design can improve trust and engagement in local food marketplaces.
+
+The goal is to make buying local produce **simple, transparent, and human-centered**—balancing producer visibility with a smooth consumer experience.
 
 ---
 
@@ -38,7 +43,7 @@ Our goal: make buying local produce **as simple, transparent, and engaging** as 
 - 📦 **Orders & Checkout** – Simple checkout and order tracking system.  
 - 🗺 **Track Orders** – Visualized delivery tracking with maps.  
 - 📑 **Static Pages** – About, FAQ, Contact, and How-It-Works sections.  
-- 🔐 **Authentication Prototype** – Sign-in and producer signup flows (NextAuth scaffolding).  
+- 🔐 **Authentication Prototype** – Sign-in and producer signup flows.  
 - 📱 **Responsive Design** – Built with accessibility and usability in mind.  
 
 ---
@@ -86,37 +91,38 @@ src/
 
 ---
 
-## ⚙️ Installation & Usage
+## ⚙️ Local Development (Optional)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/root-and-reach-ph-frontend.git
-   cd root-and-reach-ph-frontend
-   ```
+This project is primarily intended to be explored via the live demo.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+For local development or code review purposes:
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+git clone https://github.com/YOUR_USERNAME/root-and-reach-ph-frontend.git
+cd root-and-reach-ph-frontend
+npm install
+npm run dev
+````
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it locally.  
+Then open [http://localhost:3000](http://localhost:3000).
+
+
+```md
+> Note: Uses mock data only. No backend or external APIs required.
+```
 
 ---
 
 ## 📸 Screenshots
 
 > <img width="1366" height="728" alt="Homepage hero section" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
-
 **Homepage** – Landing page highlighting the platform’s mission and featured actions.
-
 > <img width="1366" height="728" alt="Nearby Farms page" src="https://github.com/user-attachments/assets/957b848b-910a-4109-8cdc-90d548320167" />
-
 **Nearby Farms page** – Users can search for farms by city or use their current location.
+> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/22883508-e14f-459b-9d0f-4fcb57444655" />
+**Farmers Directory** – Browse verified local growers, view their locations and specialties, and explore producer profiles through a searchable, filterable interface.
+> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/e6b15cf4-fd6b-4a35-9265-d99ba6a06ed0" />
+**Products Marketplace** – Discover locally sourced goods with category filters, search and sort controls, transparent pricing, and a streamlined add-to-cart experience.
 
 ---
 
@@ -133,6 +139,7 @@ src/
 
 ## 📜 License
 
-This project was developed for **academic purposes** as part of the *Human–Computer Interaction* course.  
-All UI/UX design and code are original.  
-&copy; 2025 Willard C. Soriano  
+This project was developed as part of an academic course in **Human–Computer Interaction** and is intended as a design and technical prototype.
+
+All UI/UX design and code are original work.  
+© 2025 Willard C. Soriano
