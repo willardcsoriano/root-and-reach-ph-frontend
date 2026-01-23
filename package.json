@@ -20,11 +20,7 @@
     "framer-motion": "^12.22.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.525.0",
-<<<<<<< HEAD
-    "next": "^16.1.3",
-=======
     "next": "15.3.8",
->>>>>>> 87267d7bed74d2ed97e9242c376cb1f6da789c0e
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
