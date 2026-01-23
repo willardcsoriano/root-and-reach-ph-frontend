@@ -1,6 +1,5 @@
 "use client";
 
-// Import the new section components
 import AboutHero from "@/components/pages/about-page/AboutHero";
 import MissionVisionSection from "@/components/pages/about-page/MissionVisionSection";
 import OurStorySection from "@/components/pages/about-page/OurStorySection";

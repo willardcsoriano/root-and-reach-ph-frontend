@@ -12,7 +12,7 @@ import WhyChooseUsSection from "@/components/pages/landing/WhyChooseUsSection";
 
 const HomePage = () => {
   return (
-    <div className="bg-gray-50 font-inter text-gray-800">
+    <div className="bg-gray-350 font-inter text-gray-800">
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />

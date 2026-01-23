@@ -1,11 +1,12 @@
+// src/components/pages/about-page/OurValuesSection.tsx
 "use client";
 
-import React from "react";
 import { valuesData } from "@/data/about-page/about-page-data";
 import ValueCard from "./ValueCard";
+import { motion } from "framer-motion";
+import { containerVariants, fadeUp } from "@/lib/motion";
 import { Leaf, Handshake, Heart, Award, Users, Lightbulb } from "lucide-react";
 
-// Helper function to get the correct icon based on the title
 const getIconForValue = (title: string) => {
   const iconProps = { size: 48, className: "text-green-600" };
   switch (title) {
@@ -28,23 +29,37 @@ const getIconForValue = (title: string) => {
 
 const OurValuesSection = () => (
   <section className="py-16 md:py-24 bg-white">
-    <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+    <motion.div
+      className="container mx-auto px-6 text-center"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.h2
+        className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6"
+        variants={fadeUp}
+      >
         Values That Guide Us
-      </h2>
-      <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+      </motion.h2>
+
+      <motion.p
+        className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12"
+        variants={fadeUp}
+      >
         Every decision at Root & Reach is driven by our core principles.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      </motion.p>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        variants={containerVariants}
+      >
         {valuesData.map((value) => (
-          <ValueCard
-            key={value.title}
-            value={value}
-            icon={getIconForValue(value.title)}
-          />
+          <motion.div key={value.title} variants={fadeUp}>
+            <ValueCard value={value} icon={getIconForValue(value.title)} />
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </section>
 );
 

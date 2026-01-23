@@ -1,3 +1,5 @@
+// src\data\farmers-page\farmer-data.ts
+
 // --- TYPE DEFINITIONS ---
 export interface Product {
   id: number;
@@ -8,7 +10,7 @@ export interface Product {
 }
 
 export interface Farmer {
-  id: number;
+  id: string;
   name: string;
   location: string;
   joinDate: string;
@@ -24,7 +26,7 @@ export interface Farmer {
 // --- MOCK DATA (Revised with accurate placeholder images) ---
 export const farmersData: Farmer[] = [
   {
-    id: 1,
+    id: "1",
     name: "Lorna Reyes",
     location: "Lipa, Batangas",
     joinDate: "2022-03-15",
@@ -68,7 +70,7 @@ export const farmersData: Farmer[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     name: "Elena & Ben Santiago",
     location: "Science City of Muñoz, Nueva Ecija",
     joinDate: "2021-11-20",
@@ -101,7 +103,7 @@ export const farmersData: Farmer[] = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     name: 'Ricardo "Mang Rick" Santos',
     location: "Calinan, Davao City",
     joinDate: "2023-01-10",
@@ -141,7 +143,7 @@ export const farmersData: Farmer[] = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     name: "Anita Gomez",
     location: "La Trinidad, Benguet",
     joinDate: "2022-07-05",
@@ -181,7 +183,7 @@ export const farmersData: Farmer[] = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     name: "Tia Pacing",
     location: "Lucban, Quezon",
     joinDate: "2022-02-18",

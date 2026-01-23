@@ -1,57 +1,53 @@
+// src/app/support/page.tsx
 "use client";
 
-import React from "react";
 import { Phone, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { pageFade, containerVariants } from "@/lib/motion";
 
-const SupportPage = () => {
+import SupportHero from "@/components/pages/support-page/SupportHero";
+import SupportItem from "@/components/pages/support-page/SupportItem";
+
+export default function SupportPage() {
   return (
-    <div className="bg-gray-50 pb-16 pt-16">
+    <motion.div
+      className="bg-gray-50 pb-16 pt-16"
+      variants={pageFade}
+      initial="hidden"
+      animate="show"
+    >
       <div className="container mx-auto p-4 md:p-8">
-        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-green-800">
-              Support Center
-            </h1>
-            <p className="mt-2 text-lg text-gray-600">
-              We&apos;re here to help you with any questions or issues.
-            </p>
-          </div>
+        <motion.div
+          className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          <SupportHero />
 
-          <div className="mt-10 space-y-6">
-            <a
+          <motion.div className="mt-10 space-y-6" variants={containerVariants}>
+            <SupportItem
+              icon={<Phone size={28} className="text-green-600" />}
+              title="Call Us"
+              description="+63 (917) 123-4567"
               href="tel:+639171234567"
-              className="flex items-center gap-4 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              <Phone size={28} className="text-green-600" />
-              <div>
-                <p className="font-bold text-lg">Call Us</p>
-                <p className="text-gray-700">+63 (917) 123-4567</p>
-              </div>
-            </a>
-            <a
-              href="mailto:support@rootandreach.com"
-              className="flex items-center gap-4 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              <Mail size={28} className="text-green-600" />
-              <div>
-                <p className="font-bold text-lg">Email Us</p>
-                <p className="text-gray-700">support@rootandreach.com</p>
-              </div>
-            </a>
-            <div className="flex items-center gap-4 p-4 border rounded-lg">
-              <Clock size={28} className="text-green-600" />
-              <div>
-                <p className="font-bold text-lg">Business Hours</p>
-                <p className="text-gray-700">
-                  Monday - Friday, 9:00 AM - 6:00 PM (PHT)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+            />
 
-export default SupportPage;
+            <SupportItem
+              icon={<Mail size={28} className="text-green-600" />}
+              title="Email Us"
+              description="support@rootandreach.com"
+              href="mailto:support@rootandreach.com"
+            />
+
+            <SupportItem
+              icon={<Clock size={28} className="text-green-600" />}
+              title="Business Hours"
+              description="Monday - Friday, 9:00 AM - 6:00 PM (PHT)"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}

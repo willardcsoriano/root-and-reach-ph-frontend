@@ -1,7 +1,43 @@
+// src/components/sections/landing/FAQSection.tsx
 "use client";
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { fadeUp } from "@/lib/motion";
+
+/* Motion variants */
+const containerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const answerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+  },
+  show: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      duration: 0.3,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      duration: 0.2,
+      ease: [0.4, 0, 1, 1],
+    },
+  },
+};
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -35,44 +71,70 @@ const FAQSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+      <motion.div
+        className="container mx-auto px-6 text-center"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <motion.h2
+          className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6"
+          variants={fadeUp}
+        >
           Frequently Asked Questions
-        </h2>
-        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        </motion.h2>
+
+        <motion.p
+          className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12"
+          variants={fadeUp}
+        >
           Find quick answers to common questions about Root & Reach.
-        </p>
-        <div className="max-w-4xl mx-auto">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="mb-4 bg-gray-50 rounded-xl shadow-md border border-gray-100 overflow-hidden"
-            >
-              <button
-                className="w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-900 hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
+        </motion.p>
+
+        <motion.div className="max-w-4xl mx-auto" variants={containerVariants}>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                className="mb-4 bg-gray-450 rounded-xl shadow-md border border-gray-100 overflow-hidden"
               >
-                {faq.question}
-                {openIndex === index ? (
-                  <ChevronUp size={24} className="text-green-600" />
-                ) : (
-                  <ChevronDown size={24} className="text-gray-500" />
-                )}
-              </button>
-              {openIndex === index && (
-                <div
-                  id={`faq-answer-${index}`}
-                  className="px-6 pb-6 pt-2 text-gray-700 text-base leading-relaxed animate-fade-in"
+                <button
+                  className="w-full flex justify-between items-center p-6 text-left font-semibold text-lg text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+                  {faq.question}
+                  {isOpen ? (
+                    <ChevronUp size={24} className="text-green-600" />
+                  ) : (
+                    <ChevronDown size={24} className="text-gray-500" />
+                  )}
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={`faq-answer-${index}`}
+                      variants={answerVariants}
+                      initial="hidden"
+                      animate="show"
+                      exit="exit"
+                      className="px-6 pb-6 pt-2 text-gray-700 text-base leading-relaxed overflow-hidden"
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

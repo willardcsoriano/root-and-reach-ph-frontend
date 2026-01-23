@@ -1,3 +1,4 @@
+// src/components/pages/farmers-page/FarmerCard.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,7 +48,7 @@ const FarmerCard: React.FC<{ farmer: Farmer }> = ({ farmer }) => (
         </div>
       </div>
       <Link
-        href={`/farmers/${farmer.id}`}
+        href={`/farmers/${farmer.id ?? ""}`}
         className="mt-auto inline-block w-full text-center bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
       >
         View Profile
