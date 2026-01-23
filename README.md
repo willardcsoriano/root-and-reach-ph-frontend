@@ -1,4 +1,4 @@
-# 🌱 Root & Reach PH — Human-Computer Interaction Prototype
+# 🌱 Root & Reach PH 
 
 [![Status](https://img.shields.io/badge/status-prototype-blue.svg)]()  
 [![Built With](https://img.shields.io/badge/Made%20with-Next.js%20%7C%20React%20%7C%20TypeScript-black.svg)]()  
@@ -141,7 +141,8 @@ The following screens highlight key user flows and interface decisions, focusing
 
 ## 📜 License
 
-This project was developed as part of an academic course in **Human–Computer Interaction** and is intended as a design and technical prototype.
+This project is licensed under the MIT License.
 
-All UI/UX design and code are original work.  
+Originally developed as part of an academic course in **Human–Computer Interaction**, the code and UI are shared openly for learning, reference, and portfolio purposes.
+
 © 2025 Willard C. Soriano
