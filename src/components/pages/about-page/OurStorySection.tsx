@@ -12,7 +12,8 @@ const OurStorySection = () => (
         className="md:w-1/2"
         variants={fadeInLeft}
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
       >
         <Image
           src="https://placehold.co/600x400/84cc16/ffffff?text=Our+Story"

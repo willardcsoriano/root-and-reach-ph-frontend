@@ -72,7 +72,8 @@ const FeaturedProductsSection = () => (
       className="container mx-auto px-6 text-center"
       variants={containerVariants}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
     >
       <motion.h2
         className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6"

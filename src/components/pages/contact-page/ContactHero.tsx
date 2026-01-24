@@ -9,7 +9,8 @@ const ContactHero = () => (
     className="relative bg-linear-to-br from-green-600 to-green-800 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl"
     variants={pageFade}
     initial="hidden"
-    animate="show"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.3 }}
   >
     <div className="absolute top-0 left-0 w-48 h-48 bg-green-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
     <div className="absolute top-0 right-0 w-48 h-48 bg-yellow-300 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>

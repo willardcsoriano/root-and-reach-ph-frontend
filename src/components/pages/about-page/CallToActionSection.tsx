@@ -11,8 +11,9 @@ const CallToActionSection = () => (
     <motion.div
       className="container mx-auto px-6 text-center"
       initial="hidden"
-      animate="show"
+      whileInView="show"
       variants={fadeUp}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-md">
         Join Our Growing Community!

@@ -1,7 +1,10 @@
+// src/components/pages/products-page/ProductFilters.tsx
 "use client";
 
 import React from "react";
 import { Search, Filter, ListFilter, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { containerVariants, fadeUp, tagPop } from "@/lib/motion";
 
 interface CategoryButtonProps {
   category: string;
@@ -14,7 +17,10 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
   isSelected,
   onClick,
 }) => (
-  <button
+  <motion.button
+    variants={tagPop}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
     className={`px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 ease-in-out ${
       isSelected
         ? "bg-green-600 text-white shadow-md"
@@ -23,7 +29,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     onClick={onClick}
   >
     {category}
-  </button>
+  </motion.button>
 );
 
 interface ProductFiltersProps {
@@ -46,14 +52,26 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
   setSortOption,
 }) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md mb-8 md:mb-12">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+    <motion.div
+      className="bg-white p-6 rounded-xl shadow-md mb-8 md:mb-12"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.h2
+        className="text-2xl font-bold text-gray-900 mb-6 flex items-center"
+        variants={fadeUp}
+      >
         <Filter size={24} className="mr-2 text-green-600" /> Filter & Sort
-      </h2>
+      </motion.h2>
 
-      <div className="mb-6">
+      <motion.div className="mb-6" variants={fadeUp}>
         <h3 className="text-lg font-semibold text-gray-700 mb-3">Categories</h3>
-        <div className="flex flex-wrap gap-3">
+        <motion.div
+          className="flex flex-wrap gap-3"
+          variants={containerVariants}
+        >
           {categories.map((category) => (
             <CategoryButton
               key={category}
@@ -62,11 +80,15 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
               onClick={() => setSelectedCategory(category)}
             />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        variants={containerVariants}
+      >
+        {/* Search */}
+        <motion.div variants={fadeUp}>
           <h3 className="text-lg font-semibold text-gray-700 mb-3">
             Search Products
           </h3>
@@ -83,9 +105,10 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div>
+        {/* Sort */}
+        <motion.div variants={fadeUp}>
           <h3 className="text-lg font-semibold text-gray-700 mb-3">Sort By</h3>
           <div className="relative">
             <ListFilter
@@ -107,9 +130,9 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
             />
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
