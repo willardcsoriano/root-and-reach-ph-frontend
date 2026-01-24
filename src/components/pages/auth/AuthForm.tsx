@@ -2,7 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Mail, KeyRound, LogIn, AlertTriangle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -20,25 +19,14 @@ export default function AuthForm() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  const handleSignIn = async (e: React.FormEvent) => {
+  const handleSignIn = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
-    const result = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-
-    setIsLoading(false);
-
-    if (result?.error) {
-      setError("Invalid email or password.");
-    } else if (result?.ok) {
-      router.push("/profile");
-      router.refresh();
-    }
+    setTimeout(() => {
+      router.push("/mock");
+    }, 800);
   };
 
   return (
@@ -57,7 +45,7 @@ export default function AuthForm() {
         <input
           type="email"
           placeholder="Email Address"
-          className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 transition"
+          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -72,7 +60,7 @@ export default function AuthForm() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 transition"
+          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import { fadeUp, buttonHover, buttonTap } from "@/lib/motion";
-import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const GoogleIcon = () => (
   <svg className="h-5 w-5" viewBox="0 0 48 48">
@@ -27,9 +27,11 @@ const GoogleIcon = () => (
 );
 
 export default function SocialLogin() {
+  const router = useRouter();
+
   return (
     <motion.button
-      onClick={() => signIn("google", { callbackUrl: "/profile" })}
+      onClick={() => router.push("/mock")}
       className="w-full flex items-center justify-center gap-3 py-3 px-4 bg-white text-gray-700 font-semibold border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
       variants={fadeUp}
       whileHover={buttonHover}
