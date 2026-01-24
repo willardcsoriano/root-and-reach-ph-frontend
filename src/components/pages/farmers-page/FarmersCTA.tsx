@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { containerVariants, fadeUp } from "@/lib/motion";
 
 const FarmersCTA = () => (
-  <section className="bg-white mt-16">
+  <section className="bg-gray-200 mt-16">
     <motion.div
       className="container mx-auto px-4 py-16 text-center"
       variants={containerVariants}

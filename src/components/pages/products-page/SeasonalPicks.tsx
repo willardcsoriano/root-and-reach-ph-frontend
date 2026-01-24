@@ -1,3 +1,4 @@
+// src\components\pages\products-page\SeasonalPicks.tsx
 "use client";
 
 import React from "react";
@@ -25,7 +26,7 @@ const SeasonalPicks = () => {
   ).slice(0, 4);
 
   return (
-    <section className="py-16 md:py-24 bg-green-50">
+    <section className="py-16 md:py-24 bg-gray-200">
       <motion.div
         className="container mx-auto px-6"
         variants={containerVariants}
