@@ -13,34 +13,20 @@ interface ProductGridProps {
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
   if (products.length === 0) {
-    return (
-      <motion.div
-        className="text-center py-20 bg-white rounded-xl shadow-md"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <p className="text-2xl font-semibold text-gray-600 mb-4">
-          No products found matching your criteria.
-        </p>
-        <p className="text-lg text-gray-500">
-          Try adjusting your filters or search query.
-        </p>
-      </motion.div>
-    );
+    // ... empty state (this part looks fine!)
+    return <div>...</div>;
   }
 
   return (
     <motion.div
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+      className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {products.map((product) => (
-        <motion.div key={product.id} variants={fadeUp}>
+        <motion.div key={product.id} variants={fadeUp} className="w-full">
           <ProductCard product={product} />
         </motion.div>
       ))}
