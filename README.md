@@ -68,28 +68,56 @@ This project was built as a design and front-end development exercise, not a pro
 src/
 │   middleware.ts
 │
-├── app/                  # Next.js app router pages
-│   ├── about/            # About page
-│   ├── auth/             # Authentication screens
-│   ├── cart/             # Cart page
-│   ├── checkout/         # Checkout page
-│   ├── contact/          # Contact page
-│   ├── farmers/          # Farmer directory & dynamic farmer/[id] profiles
-│   ├── nearby-farms/     # Location-based farm discovery
-│   ├── orders/           # Orders page
-│   ├── producers/        # Producer signup screen
-│   ├── products/         # Products marketplace
-│   ├── profile/          # User profile page
-│   ├── shop/             # Shop landing
-│   └── track-order/      # Order tracking (with message thread UI)
+├── app/                        # Next.js App Router pages
+│   ├── about/
+│   ├── auth/
+│   │   ├── sign-in/
+│   │   └── sign-up/
+│   ├── cart/
+│   ├── checkout/
+│   ├── contact/
+│   ├── dashboard/
+│   │   ├── orders/
+│   │   ├── profile/
+│   │   └── settings/
+│   ├── faq/
+│   ├── farmers/
+│   │   └── [id]/               # Dynamic farmer profile
+│   ├── how-it-works/
+│   ├── join/
+│   ├── nearby-farms/
+│   ├── orders/
+│   ├── producers/
+│   │   └── signup/
+│   ├── products/
+│   ├── profile/
+│   ├── shop/
+│   ├── support/
+│   └── track-order/
+│       └── [id]/
+│           └── message/
 │
-├── components/           # Reusable UI & page components
-│   ├── pages/            # Page-specific sections (landing, about-page, etc.)
-│   └── ui/               # Shared UI components (Button, Card, Footer, etc.)
+├── components/
+│   ├── layout/                 # Layout utilities (e.g. PageFadeIn)
+│   ├── dashboard/              # Dashboard-specific components
+│   ├── pages/                  # Page-specific sections
+│   │   ├── about-page/
+│   │   ├── auth/
+│   │   ├── contact-page/
+│   │   ├── farmers-page/
+│   │   ├── farmers-profile/
+│   │   ├── landing/
+│   │   ├── nearby-farms/
+│   │   ├── order-page/
+│   │   ├── producers-signup/
+│   │   ├── products-page/
+│   │   └── support-page/
+│   └── ui/                     # Shared UI components
 │
-├── contexts/             # Context API providers (Auth, Cart, Orders)
-│
-└── data/                 # Mock data (farmers, products, about info, etc.)
+├── contexts/                   # Context API (Auth, Cart, Orders)
+├── data/                       # Mock data
+├── hooks/                      # Custom hooks (useFarmers, useProducts)
+└── lib/                        # Utilities (motion.ts for Framer Motion config)
 ```
 
 ---
