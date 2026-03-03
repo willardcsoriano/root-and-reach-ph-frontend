@@ -1,61 +1,64 @@
-# 🌱 Root & Reach PH 
+# 🌱 Root & Reach PH
 
-[![Status](https://img.shields.io/badge/status-prototype-blue.svg)]()  
-[![Built With](https://img.shields.io/badge/Made%20with-Next.js%20%7C%20React%20%7C%20TypeScript-black.svg)]()  
+[![Status](https://img.shields.io/badge/status-prototype-blue.svg)]()
+[![Built With](https://img.shields.io/badge/Made%20with-Next.js%20%7C%20React%20%7C%20TypeScript-black.svg)]()
 [![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-lightgrey.svg)](https://root-and-reach-ph-frontend.vercel.app/)
 
-**Root & Reach PH** is a user-centered e-commerce prototype that connects local producers directly with consumers.  
-The platform focuses on transparency, sustainability, and community-driven commerce by making it easy to discover, trust, and support nearby farmers.
+**Root & Reach PH** is a front-end landing page prototype for a concept platform that connects local producers directly with consumers in the Philippines. The design focuses on transparency, sustainability, and community-driven commerce — making it easy to discover and support nearby farmers.
 
-Originally developed as part of a **Human–Computer Interaction** course, the project emphasizes usability, accessibility, and real-world interaction patterns.
+Originally developed as part of a **Human–Computer Interaction** course, the project demonstrates UI/UX design decisions, page layout, and front-end component architecture.
 
 🔗 **Live Demo:** [root-and-reach-ph-frontend.vercel.app](https://root-and-reach-ph-frontend.vercel.app/)
 
-> ⚠️ This is a front-end prototype using mock data; backend services and payments are not implemented.
+> ⚠️ This is a front-end prototype using mock data. No backend services or payments are implemented.
 
 ---
 
 ## 📖 Table of Contents
 
-- [Purpose](#-purpose)  
-- [Features](#-features)  
-- [Tech Stack](#-tech-stack)  
-- [Project Structure](#-project-structure)  
-- [Installation & Usage](#-installation--usage)  
-- [Screenshots](#-screenshots)  
-- [Contact](#-contact)  
-- [License](#-license)  
+- [Purpose](#-purpose)
+- [Pages & Sections](#-pages--sections)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Screenshots](#-screenshots)
+- [Contact](#-contact)
+- [License](#-license)
 
 ---
 
 ## 📝 Purpose
 
-Root & Reach PH explores how thoughtful interaction design can improve trust and engagement in local food marketplaces.
+Root & Reach PH explores how thoughtful interface design can build trust and engagement in a local food marketplace concept. The goal was to design a platform that feels **simple, transparent, and approachable** — balancing producer visibility with a smooth consumer experience.
 
-The goal is to make buying local produce **simple, transparent, and human-centered**—balancing producer visibility with a smooth consumer experience.
+This project was built as a design and front-end development exercise, not a production application.
 
 ---
 
-## 🚀 Features
+## 📄 Pages & Sections
 
-- 👩‍🌾 **Farmer Profiles** – Showcase producers and their offerings.  
-- 🛒 **Products & Cart** – Browse, filter, and add products to a shopping cart.  
-- 📦 **Orders & Checkout** – Simple checkout and order tracking system.  
-- 🗺 **Track Orders** – Visualized delivery tracking with maps.  
-- 📑 **Static Pages** – About, FAQ, Contact, and How-It-Works sections.  
-- 🔐 **Authentication Prototype** – Sign-in and producer signup flows.  
-- 📱 **Responsive Design** – Built with accessibility and usability in mind.  
+- 🏠 **Homepage / Landing** – Hero section, platform mission, and featured calls to action.
+- 👩‍🌾 **Farmer Profiles** – Showcases mock producer listings and individual profile pages.
+- 🛒 **Products & Cart** – Browse and filter mock products; add to a simulated shopping cart.
+- 📦 **Checkout & Orders** – Static checkout flow and order summary screens.
+- 🗺 **Order Tracking** – Visualized delivery tracking UI with a map placeholder.
+- 🗂 **Static Pages** – About, FAQ, Contact, and How-It-Works sections.
+- 🔐 **Auth Screens** – Sign-in and producer signup page layouts (no real auth logic).
+- 📍 **Nearby Farms** – Location-based farm discovery UI with search.
 
 ---
 
 ## 🛠 Tech Stack
 
-- [Next.js 13+ (App Router)](https://nextjs.org/)  
-- [React](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/)  
-- [NextAuth.js](https://next-auth.js.org/) (auth scaffolding)  
-- [Vercel](https://vercel.com/) for deployment  
-- Context API for state management (`CartContext`, `OrderContext`, `AuthContext`)  
-- Custom UI components with modular CSS  
+- [Next.js 13+](https://nextjs.org/) (App Router) with [React 19](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) – utility-first styling
+- [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/) – accessible component primitives
+- [Framer Motion](https://www.framer.com/motion/) – page transitions and micro-interactions
+- [Leaflet](https://leafletjs.com/) / [React Leaflet](https://react-leaflet.js.org/) – interactive maps
+- [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) – form handling and validation
+- [Swiper](https://swiperjs.com/) – touch-friendly carousels
+- [NextAuth.js](https://next-auth.js.org/) – auth scaffolding only
+- [Vercel](https://vercel.com/) – deployment
+- Context API – UI state management (`CartContext`, `OrderContext`, `AuthContext`)
 
 ---
 
@@ -65,66 +68,94 @@ The goal is to make buying local produce **simple, transparent, and human-center
 src/
 │   middleware.ts
 │
-├── app/                  # Next.js app router pages
-│   ├── about/            # About page
-│   ├── auth/             # Authentication routes
-│   ├── cart/             # Cart page
-│   ├── checkout/         # Checkout page
-│   ├── contact/          # Contact page
-│   ├── farmers/          # Farmer profiles & dynamic farmer/[id]
-│   ├── nearby-farms/     # Location-based farms
-│   ├── orders/           # Orders page
-│   ├── producers/        # Producer signup
-│   ├── products/         # Products page
-│   ├── profile/          # User profile
-│   ├── shop/             # Shop landing
-│   └── track-order/      # Order tracking (with message thread)
+├── app/                        # Next.js App Router pages
+│   ├── about/
+│   ├── auth/
+│   │   ├── sign-in/
+│   │   └── sign-up/
+│   ├── cart/
+│   ├── checkout/
+│   ├── contact/
+│   ├── dashboard/
+│   │   ├── orders/
+│   │   ├── profile/
+│   │   └── settings/
+│   ├── faq/
+│   ├── farmers/
+│   │   └── [id]/               # Dynamic farmer profile
+│   ├── how-it-works/
+│   ├── join/
+│   ├── nearby-farms/
+│   ├── orders/
+│   ├── producers/
+│   │   └── signup/
+│   ├── products/
+│   ├── profile/
+│   ├── shop/
+│   ├── support/
+│   └── track-order/
+│       └── [id]/
+│           └── message/
 │
-├── components/           # Reusable UI & page components
-│   ├── pages/            # Page-specific sections (landing, about-page, etc.)
-│   └── ui/               # Shared UI components (Button, Card, Footer, etc.)
+├── components/
+│   ├── layout/                 # Layout utilities (e.g. PageFadeIn)
+│   ├── dashboard/              # Dashboard-specific components
+│   ├── pages/                  # Page-specific sections
+│   │   ├── about-page/
+│   │   ├── auth/
+│   │   ├── contact-page/
+│   │   ├── farmers-page/
+│   │   ├── farmers-profile/
+│   │   ├── landing/
+│   │   ├── nearby-farms/
+│   │   ├── order-page/
+│   │   ├── producers-signup/
+│   │   ├── products-page/
+│   │   └── support-page/
+│   └── ui/                     # Shared UI components
 │
-├── contexts/             # Context API providers (Auth, Cart, Orders)
-│
-└── data/                 # Mock data (farmers, products, about info, etc.)
+├── contexts/                   # Context API (Auth, Cart, Orders)
+├── data/                       # Mock data
+├── hooks/                      # Custom hooks (useFarmers, useProducts)
+└── lib/                        # Utilities (motion.ts for Framer Motion config)
 ```
 
 ---
 
-## ⚙️ Local Development (Optional)
+## ⚙️ Local Development
 
 This project is primarily intended to be explored via the live demo.
 
-For local development or code review purposes:
+For local development or code review:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/root-and-reach-ph-frontend.git
 cd root-and-reach-ph-frontend
 npm install
 npm run dev
-````
+```
 
 Then open [http://localhost:3000](http://localhost:3000).
 
-
-```md
 > Note: Uses mock data only. No backend or external APIs required.
-```
 
 ---
 
-## 📸 Screenshots  
+## 📸 Screenshots
 
-The following screens highlight key user flows and interface decisions, focusing on discovery, trust, and ease of navigation across the platform.  
+The following screens highlight key pages and interface decisions across the prototype.
 
 > <img width="1366" height="728" alt="Homepage hero section" src="https://github.com/user-attachments/assets/1dcf3cfb-e690-4762-a6bc-70f4d86927ed" />
-**Homepage** – Landing page highlighting the platform’s mission and featured actions.
+**Homepage** – Landing page introducing the platform concept with featured actions.
+
 > <img width="1366" height="728" alt="Nearby Farms page" src="https://github.com/user-attachments/assets/957b848b-910a-4109-8cdc-90d548320167" />
-**Nearby Farms page** – Users can search for farms by city or use their current location.
-> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/22883508-e14f-459b-9d0f-4fcb57444655" />
-**Farmers Directory** – Browse verified local growers, view their locations and specialties, and explore producer profiles through a searchable, filterable interface.
-> <img width="1366" height="728" alt="image" src="https://github.com/user-attachments/assets/e6b15cf4-fd6b-4a35-9265-d99ba6a06ed0" />
-**Products Marketplace** – Discover locally sourced goods with category filters, search and sort controls, transparent pricing, and a streamlined add-to-cart experience.
+**Nearby Farms** – Search for farms by city or simulated current location.
+
+> <img width="1366" height="728" alt="Farmers Directory" src="https://github.com/user-attachments/assets/22883508-e14f-459b-9d0f-4fcb57444655" />
+**Farmers Directory** – Browse mock local growers with searchable, filterable listings.
+
+> <img width="1366" height="728" alt="Products Marketplace" src="https://github.com/user-attachments/assets/e6b15cf4-fd6b-4a35-9265-d99ba6a06ed0" />
+**Products Marketplace** – Locally sourced goods with category filters, sort controls, and add-to-cart UI.
 
 ---
 
@@ -132,9 +163,9 @@ The following screens highlight key user flows and interface decisions, focusing
 
 👤 **Willard C. Soriano**
 
-[![GitHub](https://img.shields.io/badge/GitHub-willardcsoriano-black?logo=github)](https://github.com/willardcsoriano)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Willard%20Soriano-blue?logo=linkedin)](https://www.linkedin.com/in/willardcsoriano/)  
-[![Facebook](https://img.shields.io/badge/Facebook-Willard%20Soriano-1877F2?logo=facebook&logoColor=white)](https://web.facebook.com/willardcsoriano/)  
+[![GitHub](https://img.shields.io/badge/GitHub-willardcsoriano-black?logo=github)](https://github.com/willardcsoriano)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Willard%20Soriano-blue?logo=linkedin)](https://www.linkedin.com/in/willardcsoriano/)
+[![Facebook](https://img.shields.io/badge/Facebook-Willard%20Soriano-1877F2?logo=facebook&logoColor=white)](https://web.facebook.com/willardcsoriano/)
 [![Email](https://img.shields.io/badge/Email-wcsoriano%40mymail.mapua.edu.ph-red?logo=gmail&logoColor=white)](mailto:wcsoriano@mymail.mapua.edu.ph)
 
 ---
