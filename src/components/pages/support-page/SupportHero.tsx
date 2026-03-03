@@ -1,5 +1,5 @@
 // src/components/pages/support-page/SupportHero.tsx
-// src/components/pages/support-page/SupportHero.tsx
+
 "use client";
 
 import { motion } from "framer-motion";

@@ -1,4 +1,5 @@
 // src/components/pages/support-page/SupportItem.tsx
+
 "use client";
 
 import { ReactNode } from "react";
@@ -23,7 +24,7 @@ export default function SupportItem({ icon, title, description, href }: Props) {
       >
         {icon}
         <div>
-          <p className="font-bold text-lg">{title}</p>
+          <p className="font-bold text-lg text-gray-900">{title}</p>
           <p className="text-gray-700">{description}</p>
         </div>
       </Wrapper>
