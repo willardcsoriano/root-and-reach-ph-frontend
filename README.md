@@ -36,14 +36,14 @@ This project was built as a design and front-end development exercise, not a pro
 
 ## 📄 Pages & Sections
 
-- 🏠 **Homepage / Landing** – Hero section, platform mission, and featured calls to action.
-- 👩‍🌾 **Farmer Profiles** – Showcases mock producer listings and individual profile pages.
-- 🛒 **Products & Cart** – Browse and filter mock products; add to a simulated shopping cart.
-- 📦 **Checkout & Orders** – Static checkout flow and order summary screens.
-- 🗺 **Order Tracking** – Visualized delivery tracking UI with a map placeholder.
-- 🗂 **Static Pages** – About, FAQ, Contact, and How-It-Works sections.
-- 🔐 **Auth Screens** – Sign-in and producer signup page layouts (no real auth logic).
-- 📍 **Nearby Farms** – Location-based farm discovery UI with search.
+🏠 **Homepage / Landing** – Hero section, platform mission, and featured calls to action.  
+👩‍🌾 **Farmer Profiles** – Showcases mock producer listings and individual profile pages.  
+🛒 **Products & Cart** – Browse and filter mock products; add to a simulated shopping cart.  
+📦 **Checkout & Orders** – Static checkout flow and order summary screens.  
+🗺 **Order Tracking** – Visualized delivery tracking UI with a map placeholder.  
+🗂 **Static Pages** – About, FAQ, Contact, and How-It-Works sections.  
+🔐 **Auth Screens** – Sign-in and producer signup page layouts (no real auth logic).  
+📍 **Nearby Farms** – Location-based farm discovery UI with search.  
 
 ---
 
