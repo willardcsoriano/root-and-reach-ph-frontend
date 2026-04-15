@@ -14,7 +14,7 @@ Originally developed as part of a **Human–Computer Interaction** course, the p
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Purpose](#-purpose)
 - [Pages & Sections](#-pages--sections)
@@ -26,7 +26,7 @@ Originally developed as part of a **Human–Computer Interaction** course, the p
 
 ---
 
-## 📝 Purpose
+## Purpose
 
 Root & Reach PH explores how thoughtful interface design can build trust and engagement in a local food marketplace concept. The goal was to design a platform that feels **simple, transparent, and approachable** — balancing producer visibility with a smooth consumer experience.
 
@@ -34,7 +34,7 @@ This project was built as a design and front-end development exercise, not a pro
 
 ---
 
-## 📄 Pages & Sections
+## Pages & Sections
 
 🏠 **Homepage / Landing** – Hero section, platform mission, and featured calls to action.  
 👩‍🌾 **Farmer Profiles** – Showcases mock producer listings and individual profile pages.  
@@ -47,7 +47,7 @@ This project was built as a design and front-end development exercise, not a pro
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - [Next.js 13+](https://nextjs.org/) (App Router) with [React 19](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/) – utility-first styling
@@ -62,7 +62,7 @@ This project was built as a design and front-end development exercise, not a pro
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```plaintext
 src/
@@ -122,7 +122,7 @@ src/
 
 ---
 
-## ⚙️ Local Development
+## Local Development
 
 This project is primarily intended to be explored via the live demo.
 
@@ -141,7 +141,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 The following screens highlight key pages and interface decisions across the prototype.
 
@@ -159,7 +159,7 @@ The following screens highlight key pages and interface decisions across the pro
 
 ---
 
-## 📬 Contact
+## Contact
 
 👤 **Willard C. Soriano**
 
@@ -170,7 +170,7 @@ The following screens highlight key pages and interface decisions across the pro
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
 
